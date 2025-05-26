@@ -45,6 +45,7 @@ class Crawling_Process(object):
         response = requests.get(self.dir_url, headers=self.request_headers)
         # 检查请求是否成功
         if response.status_code == 200:
+            print(response.text)
             soup = BeautifulSoup(response.text, 'html.parser')
             self.book_name = soup.find('strong').text
             pages_list = [option['value'] for option in soup.find_all('option')]

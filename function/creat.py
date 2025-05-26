@@ -1,18 +1,27 @@
 import os
 import re
 
-
-def creat_txt(note_path=None, book_name="未命名", chapter_name="未命名"):
+def loop_creat_txt(note_path=None, book_name="未命名", chapter_name="未命名"):
+    import getpass
+    import grp
     folder_path = os.path.dirname(__file__) + f"/../note/{book_name}"
     if note_path is not None:
         folder_path = note_path + f"/note/{book_name}"
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
+    os.chmod(folder_path, 0o777)
+    username = getpass.getuser()
+    gid = grp.getgrnam(username).gr_gid
+    os.chown(folder_path, -1, gid)
     for i in range(1, 20):
         chapter_path = folder_path + f"/第{i}章 " + chapter_name + f".txt"
-        with open(chapter_path, 'w') as file:
-            file.write(str(i))
+        creat_txt(chapter_path, chapter_contents=str(i))
     return folder_path
+
+
+def creat_txt(chapter_path=None, chapter_contents="\r\n"*3):
+    with open(chapter_path, 'w') as file:
+        file.write(str(chapter_contents))
 
 
 def mergers_chapter(book_path=None, book_name="未命名"):
@@ -40,6 +49,8 @@ def mergers_chapter(book_path=None, book_name="未命名"):
 
 
 if __name__ == "__main__":
-    file_path = creat_txt(note_path="/home/wx/Documents")
-    mergers_chapter(book_path=file_path)
+    # file_path = creat_txt(note_path="/home/wx/Documents")
+    # mergers_chapter(book_path=file_path)
     # print(os.path.dirname(__file__))
+
+    loop_creat_txt()
