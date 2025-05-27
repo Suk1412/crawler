@@ -51,20 +51,13 @@ class Crawling_Process(object):
         self.dir_url = note_url + book_id
         self.note_url = note_url
         self.book_id = book_id
-        self.request_headers = {
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-            "Referer": "https://m.minixiaoshuow.com/detail/37168/",
-            "Connection": "keep-alive",
-            "Upgrade-Insecure-Requests": "1"
-        }
         self.storage_path = ""
         self.book_path = ""
         self.file_name = ""
         self.book_chapter_list = {}
         self.creat_book_dir()
         self.get_chapter_list()
+
 
     def creat_book_dir(self):
         book_name = self.parser.extract_novel_info(self.dir_url)
@@ -107,13 +100,19 @@ class Crawling_Process(object):
             write_to_file(chapter_path, chapter_content)
             print(f"第{i}章 {chapter_name} 下载完成")
 
+
 if __name__ == '__main__':
     # 设置目标网页URL
-    book_id = "382358"
-    note_url = "https://m.shuhaige.net/"
+    # book_id = "382358"
+    # note_url = "https://m.shuhaige.net/"
+    # A = Crawling_Process(note_url, book_id)
+    # A.download_file()
+
+
+    book_id = "108632"
+    note_url = "https://ca56c1c.fk6k.cc/index/"
     A = Crawling_Process(note_url, book_id)
     A.download_file()
-
 
 
 
