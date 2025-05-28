@@ -91,15 +91,17 @@ class Crawling_Process(object):
         return book_chapter_content
     
 
-    def download_file(self):
+    def download_file(self,start_chapter: Optional[int]=0, end_chapter: Optional[int]=10000) -> None:
         for i in self.book_chapter_list.keys():
-            chapter_name = self.book_chapter_list[i][0]
-            chapter_url = self.book_chapter_list[i][1]
-            chapter_path = self.create_chapter_file(chapter_name=chapter_name)
-            chapter_content = self.get_chapter_content(chapter_url)
-            write_to_file(chapter_path, chapter_content)
-            print(f"第{i}章 {chapter_name} 下载完成")
-
+            if i >= start_chapter and i <= end_chapter:
+                chapter_name = self.book_chapter_list[i][0]
+                chapter_url = self.book_chapter_list[i][1]
+                chapter_path = self.create_chapter_file(chapter_name=chapter_name)
+                chapter_content = self.get_chapter_content(chapter_url)
+                write_to_file(chapter_path, chapter_content)
+                print(f"第{i}章 {chapter_name} 下载完成")
+            else:
+                print(f"第{i}章 跳过下载")
 
 if __name__ == '__main__':
     # 设置目标网页URL
@@ -112,7 +114,7 @@ if __name__ == '__main__':
     book_id = "108632"
     note_url = "https://ca56c1c.fk6k.cc/index/"
     A = Crawling_Process(note_url, book_id)
-    A.download_file()
+    A.download_file(start_chapter=250, end_chapter=255)
 
 
 
