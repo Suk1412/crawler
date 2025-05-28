@@ -98,7 +98,7 @@ class Crawling_Process(object):
             if i >= start_chapter and i <= end_chapter:
                 chapter_name = re.split("求月票", self.book_chapter_list[i][0])[0].replace("/", "|")
                 chapter_url = self.book_chapter_list[i][1]
-                chapter_path = self.create_chapter_file(chapter_name=chapter_name)
+                chapter_path = self.create_chapter_file(chapter_name=chapter_name, chapter_id=i)
                 chapter_content = self.get_chapter_content(chapter_url)
                 write_to_file(chapter_path, chapter_content)
                 logging.info(f"{chapter_name} 下载完成")
