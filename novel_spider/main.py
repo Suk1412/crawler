@@ -111,16 +111,10 @@ class Crawling_Process(object):
     
 if __name__ == '__main__':
 
-
-    note_url = f"https://m.minixiaoshuow.com/detail/37168/"
-    # A = Crawling_Process(note_url, book_id)
-    # A.download_file(start_chapter=250, end_chapter=255)
-
-
     parser = argparse.ArgumentParser()
-    parser.add_argument("-l", "--list", action="store_true", help="列出所有书籍")
+    # parser.add_argument("-l", "--list", action="store_true", help="列出所有书籍")
     parser.add_argument("-i", "--id", type=int, default=0, help="指定书籍ID")
-    parser.add_argument("-u", "--url", type=str, default=0, help="url")
+    parser.add_argument("-u", "--url", type=str, default=0, help="需要爬取的文章目录URL")
     parser.add_argument("-s", "--start", type=int, default=0, help="开始章节")
     parser.add_argument("-e", "--end", type=int, default=10000, help="结束章节")
     parser.add_argument("-d", "--debug", type=int, default=0, help="启用调试模式，1为开启")
@@ -135,22 +129,22 @@ if __name__ == '__main__':
     if args.debug != 1:
         logging.disable(logging.CRITICAL)
 
-    if args.list:
-        A = Crawling_Process(args.url)
-        books_id_list = A.get_booksid_list()
-        from rich.table import Table
-        from rich import print, box
-        table = Table(show_header=True, header_style="bright_green", box=box.DOUBLE_EDGE)
-        table.add_column("name", justify="center")
-        table.add_column("id", justify="center")
-        for book in books_id_list:
-            name = book[0]
-            id = book[1]
-            table.add_row(*(name, id), style='bright_blue')
-        print(table)
-    else:
-        A = Crawling_Process(args.url)
-        A.download_file(args.start, args.end)
+    # if args.list:
+    #     A = Crawling_Process(args.url)
+    #     books_id_list = A.get_booksid_list()
+    #     from rich.table import Table
+    #     from rich import print, box
+    #     table = Table(show_header=True, header_style="bright_green", box=box.DOUBLE_EDGE)
+    #     table.add_column("name", justify="center")
+    #     table.add_column("id", justify="center")
+    #     for book in books_id_list:
+    #         name = book[0]
+    #         id = book[1]
+    #         table.add_row(*(name, id), style='bright_blue')
+    #     print(table)
+    # else:
+    ants = Crawling_Process(args.url)
+    ants.download_file(args.start, args.end)
     
 
 
