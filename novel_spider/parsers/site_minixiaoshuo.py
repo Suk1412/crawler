@@ -31,12 +31,12 @@ class BaseParser(ABC):
         """ 提取章节正文 """
         pass
 
-class BiqugeParser(BaseParser):
+class MinixiaoshuoParser(BaseParser):
     def extract_novel_info(self, html):
         response = requests.get(html, headers=self.request_headers)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            book_name = soup.select("h1.bookName")[0].text.strip()
+            book_name = soup.select("h1")[0].text.strip()
         else:
             print(response.status_code)
             print("qidian novel info error")
@@ -44,22 +44,23 @@ class BiqugeParser(BaseParser):
 
 
     def extract_chapter_list(self, html):
-        urls = self.extract_chapter_page(html)
         chapter_num = 1
         chapters = {}
-        for url in urls:
-            response = requests.get(url, headers=self.request_headers)
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.text, 'html.parser')
-                for a in soup.select("div.book_last a"):
-                    title = a.text.strip()
-                    link = f"https://ca56c1c.fk6k.cc{a['href']}"
-                    pattern = r"^/index/108632/\d+\.html$"
-                    if re.match(pattern, a['href']):
-                        chapters[chapter_num] = [title, link]
-                        chapter_num += 1
-                    else:
-                        chapter_num += 1
+        url = html
+        response = requests.get(url, headers=self.request_headers)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            for a in soup.select("div.bd ul li a"):
+                title = a.text.strip()
+                link = f"{url}{a['href']}"
+                pattern = r"^\d+\.html$"
+                if re.match(pattern, a['href']):
+                    chapters[chapter_num] = [title, link]
+                    chapter_num += 1
+                else:
+                    chapter_num += 1
+        else:
+            print("qidian chapter list error:",response.status_code)
         return chapters
             
     
@@ -68,15 +69,19 @@ class BiqugeParser(BaseParser):
         content_div = []
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
-            title = soup.find('span', class_='title').text.strip()
+            title = soup.find('h1', class_='headline').text.strip()
             match = re.search(r'(第\d+章\s+[^\s_]+)', title)
             if match:
                 title = match.group(1)
             else:
                 pass
-            content_div = soup.find("div", id="chaptercontent")
-            raw_text = content_div.get_text(separator="\n", strip=True)
-            clean_text = raw_text.split("请收藏：")[0].strip()
+            content_div = soup.find("div", id="txt")
+            cleaned_paragraphs = []
+            for p in content_div.find_all("p"):
+                text = p.get_text(strip=True)
+                if "请关注米妮小说网" not in text:
+                    cleaned_paragraphs.append(text)
+            clean_text = "\n".join(cleaned_paragraphs)
         return title + "\n" + clean_text
 
 
@@ -87,15 +92,14 @@ class BiqugeParser(BaseParser):
             soup = BeautifulSoup(response.text, 'html.parser')
             options = soup.select('div.book_more a')
             pages = [opt['href'] for opt in options]
-            full_urls = [f"https://ca56c1c.fk6k.cc{path}" for path in pages]
+            full_urls = [f"https://m.minixiaoshuow.com/detail{path}" for path in pages]
         return full_urls
 
 
 
 if __name__ == "__main__":
-    parser = BiqugeParser()
-    # parser.extract_chapter_list(url)
-    id = "37168"
-    url = f"https://m.minixiaoshuow.com/detail/{id}/"
-    chapters = parser.extract_novel_info(url)
+    parser = MinixiaoshuoParser()
+    url = f"https://m.minixiaoshuow.com/detail/37168/"
+    url = f"https://m.minixiaoshuow.com/detail/37168/76913.html"
+    chapters = parser.extract_chapter_content(url)
     print(chapters)

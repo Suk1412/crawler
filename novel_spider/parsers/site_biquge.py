@@ -24,7 +24,7 @@ class BiqugeParser(BaseParser):
                 for a in soup.select("div.book_last a"):
                     title = a.text.strip()
                     link = f"https://ca56c1c.fk6k.cc{a['href']}"
-                    pattern = r"^/index/108632/\d+\.html$"
+                    pattern = r"^/index/\d+/\d+\.html$"
                     if re.match(pattern, a['href']):
                         chapters[chapter_num] = [title, link]
                         chapter_num += 1
