@@ -113,7 +113,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     # parser.add_argument("-l", "--list", action="store_true", help="列出所有书籍")
-    parser.add_argument("-i", "--id", type=int, default=0, help="指定书籍ID")
+    # parser.add_argument("-i", "--id", type=int, default=0, help="指定书籍ID")
     parser.add_argument("-u", "--url", type=str, default=0, help="需要爬取的文章目录URL")
     parser.add_argument("-s", "--start", type=int, default=0, help="开始章节")
     parser.add_argument("-e", "--end", type=int, default=10000, help="结束章节")
@@ -143,8 +143,16 @@ if __name__ == '__main__':
     #         table.add_row(*(name, id), style='bright_blue')
     #     print(table)
     # else:
-    ants = Crawling_Process(args.url)
-    ants.download_file(args.start, args.end)
+
+    if not args.url:
+        url = input("请输入书籍目录 url：")
+    else:
+        url = args.url
+    try:
+        ants = Crawling_Process(url)
+        ants.download_file(args.start, args.end)
+    except KeyboardInterrupt:
+        print("爬取中断，程序退出")
     
 
 
