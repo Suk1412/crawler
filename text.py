@@ -1,7 +1,12 @@
-def test(A=None):
-    if A is not None:
-        print("not None")
-    else:
-        print("None")
 
-test(A=22)
+seed = "你好，世界！"
+seed2 = int(seed.encode('utf-8').hex(), 16)
+print(seed2)
+
+
+
+
+
+
+
+
