@@ -1,4 +1,5 @@
 from urllib.parse import urlparse
+from parsers.site_baishuzhai import BaishuzhaiParser
 from parsers.site_shuhaige import ShuhaigeParser
 from parsers.site_biquge import BiqugeParser
 from parsers.site_minixiaoshuo import MinixiaoshuoParser
@@ -11,5 +12,7 @@ def get_parser(url: str):
         return BiqugeParser()
     if "minixiaoshuo" in domain:
         return MinixiaoshuoParser()
+    if "baishuzhai" in domain:
+        return BaishuzhaiParser()
     else:
         raise ValueError(f"不支持的网站: {domain}")

@@ -1,0 +1,1 @@
+"export PYTHONPATH=/home/wx/work/git_depot/crawler"

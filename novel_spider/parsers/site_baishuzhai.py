@@ -31,58 +31,49 @@ class BaseParser(ABC):
         """ 提取章节正文 """
         pass
 
-class MinixiaoshuoParser(BaseParser):
+class BaishuzhaiParser(BaseParser):
     def extract_novel_info(self, html):
         response = requests.get(html, headers=self.request_headers)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            book_name = soup.select("h1")[0].text.strip()
-        else:
-            print(response.status_code)
-            print("qidian novel info error")
+            book_name = soup.select("div.book h1")[0].text.strip()
         return book_name
 
 
     def extract_chapter_list(self, html):
+        # urls = self.extract_chapter_page(html)
         chapter_num = 1
+        start_state = 0 
         chapters = {}
         url = html
         response = requests.get(url, headers=self.request_headers)
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            for a in soup.select("div.bd ul li a"):
+            for a in soup.select("div.listmain dl dd a"):
                 title = a.text.strip()
-                link = f"{url}{a['href']}"
-                pattern = r"^\d+\.html$"
-                if re.match(pattern, a['href']):
+                link = f"https://www.baishuzhai.cc{a['href']}"
+
+                numbers = re.findall(r'第(\d+)章', title)[0]
+                if numbers == "1":
+                    start_state = 1
+                if start_state == 1:
                     chapters[chapter_num] = [title, link]
                     chapter_num += 1
-                else:
-                    chapter_num += 1
-        else:
-            print("qidian chapter list error:",response.status_code)
+                    start_state = 1
         return chapters
             
     
     def extract_chapter_content(self, html):
         response = requests.get(html, headers=self.request_headers)
-        content_div = []
+        paragraphs = []
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, "html.parser")
-            title = soup.find('h1', class_='headline').text.strip()
-            match = re.search(r'(第\d+章\s+[^\s_]+)', title)
-            if match:
-                title = match.group(1)
-            else:
-                pass
-            content_div = soup.find("div", id="txt")
-            cleaned_paragraphs = []
-            for p in content_div.find_all("p"):
-                text = p.get_text(strip=True)
-                if "请关注米妮小说网" not in text:
-                    cleaned_paragraphs.append(text)
-            clean_text = "\n".join(cleaned_paragraphs)
-        return title + "\n" + clean_text
+            title = soup.find('h1').get_text(strip=True)
+            paragraphs.append(title)
+            paragraph = soup.select("div.showtxt")[0]
+            lines = paragraph.get_text(separator='\n', strip=True).split('\n')
+            lines.insert(0, title)
+        return '\n'.join(lines)
 
 
     def extract_chapter_page(self, html):
@@ -90,16 +81,16 @@ class MinixiaoshuoParser(BaseParser):
         pages = []
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
-            options = soup.select('div.book_more a')
-            pages = [opt['href'] for opt in options]
-            full_urls = [f"https://m.minixiaoshuow.com/detail{path}" for path in pages]
+            options = soup.select('select option')
+            pages = [opt['value'] for opt in options]
+            full_urls = [f"https://www.baishuzhai.cc{path}" for path in pages]
         return full_urls
 
 
 
 if __name__ == "__main__":
-    parser = MinixiaoshuoParser()
-    # url = f"https://m.minixiaoshuow.com/detail/37168/"
-    url = f"https://m.minixiaoshuow.com/detail/37168/76913.html"
-    chapters = parser.extract_chapter_page(url)
-    print(chapters)
+    parser = BaishuzhaiParser()
+    # url = 'https://www.baishuzhai.cc/ibook/83243/83243894/'
+    url = 'https://www.baishuzhai.cc/ibook/83243/83243894/36065058.html'
+    parser.extract_chapter_content(url)
+

@@ -112,8 +112,6 @@ class Crawling_Process(object):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    # parser.add_argument("-l", "--list", action="store_true", help="列出所有书籍")
-    # parser.add_argument("-i", "--id", type=int, default=0, help="指定书籍ID")
     parser.add_argument("-u", "--url", type=str, default=0, help="需要爬取的文章目录URL")
     parser.add_argument("-s", "--start", type=int, default=0, help="开始章节")
     parser.add_argument("-e", "--end", type=int, default=10000, help="结束章节")
@@ -128,21 +126,6 @@ if __name__ == '__main__':
     logging.getLogger("urllib3").setLevel(logging.WARNING)
     if args.debug != 1:
         logging.disable(logging.CRITICAL)
-
-    # if args.list:
-    #     A = Crawling_Process(args.url)
-    #     books_id_list = A.get_booksid_list()
-    #     from rich.table import Table
-    #     from rich import print, box
-    #     table = Table(show_header=True, header_style="bright_green", box=box.DOUBLE_EDGE)
-    #     table.add_column("name", justify="center")
-    #     table.add_column("id", justify="center")
-    #     for book in books_id_list:
-    #         name = book[0]
-    #         id = book[1]
-    #         table.add_row(*(name, id), style='bright_blue')
-    #     print(table)
-    # else:
 
     if not args.url:
         url = input("请输入书籍目录 url：")
