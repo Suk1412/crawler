@@ -1,46 +1,15 @@
 import argparse
 import os
-import re
 from typing import Optional
 from urllib.parse import urlparse
 from parser_factory import get_parser
 import logging
-
 from tools.creat_tools import create_dir, create_file
+from tools.write_tools import write_to_file
 
 """
 读取博客文章类但章节内容
 """
-
-# def create_dir(path: Optional[str]=None, chmod_mode: Optional[int]=None,gid: Optional[int]=None, uid: Optional[int]=None) -> None:
-#     import pwd, grp
-#     if chmod_mode is None:
-#         chmod_mode = 0o775
-#     if gid is None:
-#         gid = grp.getgrnam(os.getlogin()).gr_gid
-#     if uid is None:
-#         uid = pwd.getpwnam(os.getlogin()).pw_uid
-#     if not os.path.exists(path):
-#         os.makedirs(path)
-#         os.chmod(path, chmod_mode)
-#         os.chown(path, gid, uid)
-
-# def create_file(path: Optional[str]=None, chmod_mode: Optional[int]=None,gid: Optional[int]=None, uid: Optional[int]=None) -> None:
-#     import pwd, grp
-#     if chmod_mode is None:
-#         chmod_mode = 0o775
-#     if gid is None:
-#         gid = grp.getgrnam(os.getlogin()).gr_gid
-#     if uid is None:
-#         uid = pwd.getpwnam(os.getlogin()).pw_uid
-#     if not os.path.exists(path):
-#         open(path, 'a').close()
-#         os.chmod(path, chmod_mode)
-#         os.chown(path, gid, uid)
-
-def write_to_file(path: str, content: str) -> None:
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(content)
 
 class Crawling_Process(object):
     def __init__(self, file_url: Optional[str]=None) -> None:
