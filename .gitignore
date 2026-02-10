@@ -1,4 +1,5 @@
 note/
+file/
 *.pyc
 text.py
 text/
