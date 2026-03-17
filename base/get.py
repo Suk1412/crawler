@@ -13,6 +13,7 @@ class BaseParser(ABC):
             "Upgrade-Insecure-Requests": "1"
         }
 
+
     @abstractmethod
     def extract_file_info(self, html: str) -> str:
         """ 提取文章基本信息 """

@@ -28,7 +28,6 @@ class CnsecParser(BaseParser):
         return '\n'.join(lines)
 
 if __name__ == "__main__":
-    url = "https://www.baishuzhai.cc/ibook/83243/83243894/36065058.html"
     url = "https://cn-sec.com/archives/5000944.html"
     C = CnsecParser()
     print(C.extract_novel_info(url))
