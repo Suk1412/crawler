@@ -1,0 +1,21 @@
+domains:
+  - ca56c1c.fk6k.cc
+
+entry_type: catalog
+
+book:
+  title_selector: "dt.name"
+
+catalog:
+  page_selector: "div.book_more a"
+  page_url_attr: href
+
+  chapter_selector: "div.book_last a"
+  chapter_title: text
+  chapter_url_attr: href
+  chapter_href_pattern: "^/index/\\d+/\\d+\\.html$"
+
+content:
+  title_selector: "span.title"
+  content_selector: "#chaptercontent"
+  remove_after: "请收藏："

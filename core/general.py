@@ -2,7 +2,7 @@ from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 import requests
 from typing import Optional
-from base.get import BaseParser
+from get import BaseParser
 from site_configs import site_configs
 
 class GeneralWebParser(BaseParser):
@@ -29,7 +29,18 @@ class GeneralWebParser(BaseParser):
         response = requests.get(html, headers=self.request_headers)
         paragraphs = []
         if response.status_code == 200:
-            soup = BeautifulSoup(response.text, "html.parser")
+            from selenium import webdriver
+            from selenium.webdriver.chrome.options import Options
+            from bs4 import BeautifulSoup
+            chrome_options = Options()
+            chrome_options.add_argument("--headless")  # 无头模式
+            driver = webdriver.Chrome(options=chrome_options)
+            driver.get(html)
+            # 等待 JS 加载完成
+            driver.implicitly_wait(5)
+            html = driver.page_source
+            soup = BeautifulSoup(html, "html.parser")
+
             title = soup.select_one(self.title_xpath).get_text(strip=True)
             paragraphs.append(title)
             paragraph = soup.select_one(self.content_xpath)

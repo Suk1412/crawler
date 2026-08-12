@@ -1,0 +1,20 @@
+domains:
+  - m.shuhaige.net
+
+entry_type: catalog
+
+book:
+  title_selector: "p.name"
+
+catalog:
+  title_selector: "h2.title"
+  page_selector: "select option"
+  page_url_attr: "value"
+
+  chapter_selector: "ul.read li a"
+  chapter_title: text
+  chapter_url_attr: href
+
+content:
+  title_selector: "h1.headline"
+  paragraph_selector: "div.content p"

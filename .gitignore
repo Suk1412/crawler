@@ -1,5 +1,3 @@
-note/
-file/
 *.pyc
-text.py
-text/
+output/
+tests/

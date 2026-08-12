@@ -1,0 +1,19 @@
+domains:
+  - m.minixiaoshuow.com
+
+entry_type: catalog
+
+book:
+  title_selector: "h1"
+
+catalog:
+  chapter_selector: "div.bd ul li a"
+  chapter_title: text
+  chapter_url_attr: href
+  chapter_href_pattern: "^\\d+\\.html$"
+
+content:
+  title_selector: "h1.headline"
+  paragraph_selector: "#txt p"
+  remove_text:
+    - "请关注米妮小说网"
