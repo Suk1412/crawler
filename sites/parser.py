@@ -89,17 +89,13 @@ class Parser():
         return title + "\n" + "\n".join(p.get_text(strip=True) for p in paragraphs)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def extract_chapter_page(self, html):
+        response = self.session.get(html, timeout=(5, 15))
+        pages = []
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            options = soup.select(self.chapter_page_selector)
+            pages = [opt['value'] for opt in options]
+            full_urls = [urljoin(html, path) for path in pages]
+        return full_urls
 

@@ -1,5 +1,6 @@
 import os
 from typing import Optional
+import re
 
 def clean_chapter_title(title: str) -> str:
       """去掉章节编号，保留用于文件名的章节标题。"""
@@ -45,18 +46,16 @@ class Storage():
         self.output_dir = output_dir
 
     def save(self, book_name: str, chapter_no: int, chapter_title: str, content: str, entry_type: str):
-        # Create the directory for the book if it doesn't exist
+        # 创建书籍目录
         book_dir = os.path.join(self.output_dir, book_name)
         os.makedirs(book_dir, exist_ok=True)
 
-        # Create a filename for the chapter
-        filename = f"{chapter_no:03d}_{chapter_title}.txt"
+        title_name = clean_chapter_title(chapter_title)
+        filename = f"第{chapter_no:03d}章 {title_name}.txt"
         file_path = os.path.join(book_dir, filename)
-
-        # Save the content to the file
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
-        
+    
 
 if __name__ == "__main__":
     storage = Storage(output_dir="output")
