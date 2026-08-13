@@ -86,7 +86,7 @@ class Parser():
                 raise ValueError(f"找不到正文标题：{self.content_title_selector}")
             title = title_node.get_text(strip=True)
             paragraphs = soup.select(self.content_paragraph_selector)
-        return title + "\n" + "\n".join(p.get_text(strip=True) for p in paragraphs)
+        return title, title + "\n" + "\n".join(p.get_text(strip=True) for p in paragraphs)
 
 
     def extract_chapter_page(self, html):
@@ -96,6 +96,28 @@ class Parser():
             soup = BeautifulSoup(response.text, 'html.parser')
             options = soup.select(self.chapter_page_selector)
             pages = [opt['value'] for opt in options]
+            print(f"章节页数: {pages}")
             full_urls = [urljoin(html, path) for path in pages]
         return full_urls
 
+
+
+if __name__ == "__main__":
+    from config_loader import load_config_for_url
+    # test_url = "https://cn-sec.com/archives/category/安全文章"
+    # test_url = "https://cn-sec.com/archives/5000944.html"
+    test_url = 'https://m.shuhaige.net/382358/'
+    config = load_config_for_url(test_url)
+    print(f"已加载配置：{config}")
+    parser = Parser(config)
+    # book_name = parser.get_book_name(test_url)
+    # chapters = parser.get_chapter_list(test_url)
+    # print(f"书名: {book_name}")
+    # print(f"章节数: {len(chapters)}")
+    # for chapter_no, (chapter_title, chapter_url) in chapters.items():
+    #     print(f"章节 {chapter_no}: {chapter_title} - {chapter_url}")
+    #     title, content = parser.get_chapter_content(chapter_url)
+    #     print(f"正文标题: {title}")
+    #     print(f"正文内容: {content[:100]}...")  # 打印前100个字符   
+    urls = parser.extract_chapter_page(test_url)
+    print(f"章节页数: {len(urls)}")

@@ -1,0 +1,24 @@
+domains:
+  - cn-sec.com
+  
+match:
+    path_regex: "^/archives/category/"
+    priority: 90
+
+entry_type: single
+
+book:
+  title_selector: "p.name"
+
+catalog:
+  title_selector: "h2.title"
+  page_selector: "select option"
+  page_url_attr: "value"
+
+  chapter_selector: "ul.read li a"
+  chapter_title: text
+  chapter_url_attr: href
+
+content:
+  title_selector: "h1.entry-title"
+  paragraph_selector: "div.single-content p"
