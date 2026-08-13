@@ -1,9 +1,11 @@
 from bs4 import BeautifulSoup
+import logging
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from urllib.parse import urljoin
 
+logger = logging.getLogger(__name__)
 
 class Parser():
     def __init__(self, config: dict):
@@ -36,8 +38,12 @@ class Parser():
         catalog_config = self.config.get("catalog", {})
         self.book_title_selector = self.config['book']['title_selector']
         self.chapter_title_selector = self.config['catalog']['title_selector']
+        self.chapter_page_mode = catalog_config.get('page_mode')
+        self.chapter_max_pages = catalog_config.get('max_pages')
         self.chapter_page_selector = self.config['catalog']['page_selector']
         self.chapter_page_url_attr = self.config['catalog']['page_url_attr']
+        self.chapter_next_page_selector = catalog_config.get('next_page_selector')
+        self.chapter_next_page_url_attr = catalog_config.get('next_page_url_attr')
         self.chapter_chapter_selector = self.config['catalog']['chapter_selector']
         self.chapter_chapter_title = self.config['catalog']['chapter_title']
         self.chapter_chapter_url_attr = catalog_config.get('chapter_url_attr')
@@ -47,19 +53,23 @@ class Parser():
 
     def get_book_name(self, html):
         """返回书名"""
+        logger.debug("请求书籍/文章页：%s", html)
         response = self.session.get(html, timeout=(5, 15))
         if response.status_code == 200:
             soup = BeautifulSoup(response.text, 'html.parser')
             book_name = soup.select(self.book_title_selector)[0].text.strip()
+            logger.debug("书籍/文章名：%s", book_name)
         return book_name
 
 
     def get_chapter_list(self, html):
         """返回章节标题和链接列表"""
         urls = self.extract_chapter_page(html)
+        logger.info("开始解析章节列表：目录页数量=%s", len(urls))
         chapter_num = 1
         chapters = {}
         for url in urls:
+            logger.debug("请求目录页：%s", url)
             response = self.session.get(url, timeout=(5, 15))
             if response.status_code == 200:
                 soup = BeautifulSoup(response.text, 'html.parser')
@@ -72,11 +82,13 @@ class Parser():
                     chapter_url = urljoin(url, href)
                     chapters[chapter_num] = [title, chapter_url]
                     chapter_num += 1
+        logger.info("章节列表解析完成：共发现 %s 个章节", len(chapters))
         return chapters
             
     
     def get_chapter_content(self, html):
         """解析单个正文页"""
+        logger.debug("请求正文页：%s", html)
         response = self.session.get(html, timeout=(5, 15))
         paragraphs = []
         if response.status_code == 200:
@@ -88,27 +100,62 @@ class Parser():
             paragraphs = soup.select(self.content_paragraph_selector)
         return title, title + "\n" + "\n".join(p.get_text(strip=True) for p in paragraphs)
 
-
+    
     def extract_chapter_page(self, html):
-        response = self.session.get(html, timeout=(5, 15))
-        pages = []
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.text, 'html.parser')
-            options = soup.select(self.chapter_page_selector)
-            pages = [opt['value'] for opt in options]
-            print(f"章节页数: {pages}")
-            full_urls = [urljoin(html, path) for path in pages]
-        return full_urls
+        """提取章节页数"""
+        page_mode = self.chapter_page_mode
+        if page_mode == "all_links":
+            logger.debug("目录分页模式：所以页链接")
+            response = self.session.get(html, timeout=(5, 15))
+            pages = []
+            if response.status_code == 200:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                options = soup.select(self.chapter_page_selector)
+                pages = [opt['value'] for opt in options]
+                page_urls = [urljoin(html, path) for path in pages]
+                logger.info("发现 %s 个目录分页链接", len(page_urls))
+            return page_urls
+
+        if page_mode == "next_link":
+            logger.info("目录分页模式：链接翻页")
+            page_urls = []
+            visited = set()
+            current_url = html
+            max_pages = self.chapter_max_pages
+            while current_url and current_url not in visited and len(page_urls) < max_pages:
+                visited.add(current_url)
+                page_urls.append(current_url)
+                response = self.session.get(current_url, timeout=(5, 15))
+                response.raise_for_status()
+                soup = BeautifulSoup(response.text, "html.parser")
+                next_node = soup.select_one(self.chapter_next_page_selector)
+                if not next_node:
+                    break
+                attr = self.chapter_next_page_url_attr
+                href = next_node.get(attr)
+                current_url = urljoin(current_url, href) if href else None
+            if len(page_urls) == max_pages:
+                logger.warning("目录页达到最大限制 %s，已停止继续翻页", max_pages)
+            logger.info("发现 %s 个目录分页链接", len(page_urls))
+            return page_urls
 
 
 
 if __name__ == "__main__":
     from config_loader import load_config_for_url
-    # test_url = "https://cn-sec.com/archives/category/安全文章"
+    test_url = "https://cn-sec.com/archives/category/安全文章"
+    test_url = "https://cn-sec.com/archives/category/%e5%ae%89%e5%85%a8%e6%96%87%e7%ab%a0/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e5%ae%89%e5%85%a8"
+    # test_url = "https://cn-sec.com/archives/category/安全文章/page/2"
     # test_url = "https://cn-sec.com/archives/5000944.html"
-    test_url = 'https://m.shuhaige.net/382358/'
+    test_url = "https://m.shuhaige.net/382358/"
     config = load_config_for_url(test_url)
-    print(f"已加载配置：{config}")
+    # import yaml
+    # print("已加载配置：\n"
+    #   + yaml.safe_dump(
+    #     config,
+    #     allow_unicode=True,
+    #     sort_keys=False,
+    # ))
     parser = Parser(config)
     # book_name = parser.get_book_name(test_url)
     # chapters = parser.get_chapter_list(test_url)
@@ -119,5 +166,14 @@ if __name__ == "__main__":
     #     title, content = parser.get_chapter_content(chapter_url)
     #     print(f"正文标题: {title}")
     #     print(f"正文内容: {content[:100]}...")  # 打印前100个字符   
-    urls = parser.extract_chapter_page(test_url)
-    print(f"章节页数: {len(urls)}")
+    # urls = parser.extract_chapter_page(test_url)
+    # print(f"章节页数: {len(urls)}")
+
+    # urls = parser.get_chapter_list(test_url)
+    # print(f"章节数: {len(urls)}")
+
+    book_name = parser.get_book_name(test_url)
+    print(f"书名: {book_name}")
+    chapters = parser.get_chapter_list(test_url)
+    total_chapters = len(chapters)
+    print(f"章节数: {total_chapters}")

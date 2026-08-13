@@ -1,8 +1,10 @@
-
 from sites.config_loader import load_config_for_url   
 from sites.parser import Parser
 from core.storage import Storage
 from urllib.parse import urlparse
+import logging
+
+logger = logging.getLogger(__name__)
 
 class ProcessManager(object):
     def __init__(self, entry_url: str):
@@ -17,10 +19,10 @@ class ProcessManager(object):
         chapters = self.parser.get_chapter_list(self.entry_url)
         total_chapters = len(chapters)
         if not total_chapters:
-            print("未找到可下载的章节。")
+            logger.warning("未找到可下载章节：%s", self.entry_url)
             return
         
-        print(f"开始下载《{book_name}》，共 {total_chapters} 章")
+        logger.info("开始下载《%s》，共 %s 章", book_name, total_chapters)
         saved_count = 0
         try:
             for completed, (chapter_no, (chapter_title, chapter_url)) in enumerate(
@@ -34,15 +36,15 @@ class ProcessManager(object):
                     content=content,
                     entry_type=entry_type,
                 )
+                logger.debug("已保存章节 %s/%s：%s", completed, total_chapters, chapter_title)
                 saved_count = completed
                 self._print_progress(completed, total_chapters, chapter_title)
-        except KeyboardInterrupt:
             print()
-            print(f"下载已中断：已完成 {saved_count}/{total_chapters} 章。")
+        except KeyboardInterrupt:
+            logger.warning("下载被用户中断：已完成 %s/%s 章", saved_count, total_chapters)
             return
         
-        print()
-        print(f"《{book_name}》下载完成。")
+        logger.info("《%s》下载完成", book_name)
 
     def single(self, entry_type):
         """单章小说下载器"""
@@ -56,11 +58,11 @@ class ProcessManager(object):
                 content=content,
                 entry_type=entry_type,
             )
+            logger.info("单篇文章已保存：%s", chapter_title)
         except KeyboardInterrupt:
+            logger.warning("单篇文章下载被用户中断：%s", self.entry_url)
             return
         
-        print()
-        print(f"《{chapter_title}》下载完成。")
 
     
     def article_list(self, entry_type):
@@ -69,10 +71,10 @@ class ProcessManager(object):
         chapters = self.parser.get_chapter_list(self.entry_url)
         total_chapters = len(chapters)
         if not total_chapters:
-            print("未找到可下载的章节。")
+            logger.warning("未找到列表文章：%s", self.entry_url)
             return
         
-        print(f"开始下载《{book_name}》，共 {total_chapters} 章")
+        logger.info("开始下载文章列表《%s》，共 %s 篇", book_name, total_chapters)
         saved_count = 0
         try:
             for completed, (chapter_no, (chapter_title, chapter_url)) in enumerate(
@@ -86,20 +88,20 @@ class ProcessManager(object):
                     content=content,
                     entry_type=entry_type,
                 )
+                logger.debug("已保存文章 %s/%s：%s", completed, total_chapters, chapter_title)
                 saved_count = completed
                 self._print_progress(completed, total_chapters, chapter_title)
-        except KeyboardInterrupt:
             print()
-            print(f"下载已中断：已完成 {saved_count}/{total_chapters} 章。")
+        except KeyboardInterrupt:
+            logger.warning("文章列表下载被用户中断：已完成 %s/%s 篇", saved_count, total_chapters)
             return
-        
-        print()
-        print(f"《{book_name}》下载完成。")
+    
+        logger.info("文章列表《%s》下载完成", book_name)
         
 
     def run(self):
         entry_type = self.parser.config["entry_type"]
-        print(f"Entry type: {entry_type}")
+        logger.info("任务类型：%s", entry_type)
         if entry_type == "catalog":
             self.catalog(entry_type)
         if entry_type == "single_article":

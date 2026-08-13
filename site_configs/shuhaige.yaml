@@ -8,6 +8,7 @@ book:
 
 catalog:
   title_selector: "h2.title"
+  page_mode: all_links
   page_selector: "select option"
   page_url_attr: "value"
 

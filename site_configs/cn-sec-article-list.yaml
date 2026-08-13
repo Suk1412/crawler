@@ -5,17 +5,22 @@ match:
     path_regex: "^/archives/category/"
     priority: 90
 
-entry_type: single
+entry_type: article_list
 
 book:
-  title_selector: "p.name"
+  title_selector: "div.breadcrumb span.current"
 
 catalog:
   title_selector: "h2.title"
+  page_mode: next_link
+  max_pages: 2
+  
   page_selector: "select option"
   page_url_attr: "value"
+  next_page_selector: "a.next.page-numbers"
+  next_page_url_attr: "href"
 
-  chapter_selector: "ul.read li a"
+  chapter_selector: "h2.entry-title a"
   chapter_title: text
   chapter_url_attr: href
 
