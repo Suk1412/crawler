@@ -1,5 +1,6 @@
 from sites.config_loader import load_config_for_url   
 from sites.parser import Parser
+from tools.text_utils import safe_filename
 from core.storage import Storage
 from urllib.parse import urlparse
 import logging
@@ -51,6 +52,8 @@ class ProcessManager(object):
         try:
             book_name = urlparse(self.entry_url).netloc
             chapter_title, content = self.parser.get_chapter_content(self.entry_url)
+            save_title_name = safe_filename(chapter_title)
+            self.parser.download_single_article(save_title_name,self.entry_url)
             self.storage.save(
                 book_name=book_name,
                 chapter_no=None,

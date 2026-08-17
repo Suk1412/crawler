@@ -4,8 +4,11 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from urllib.parse import urljoin
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
+output_dir = Path(__file__).resolve().parents[1] / "output" / "html"
+output_dir.mkdir(parents=True, exist_ok=True)
 
 class Parser():
     def __init__(self, config: dict):
@@ -100,6 +103,18 @@ class Parser():
             paragraphs = soup.select(self.content_paragraph_selector)
         return title, title + "\n" + "\n".join(p.get_text(strip=True) for p in paragraphs)
 
+    def download_single_article(self,name,html):
+        """单篇文章下载器"""
+        try:
+            response = self.session.get(html, timeout=(5, 15))
+            response.raise_for_status()
+            file_path = output_dir / f"{name}.html"
+            with open(file_path, "w", encoding="utf-8") as file:
+                file.write(response.text)
+            logger.info("HTML页面已下载：%s", name)
+        except KeyboardInterrupt:
+            logger.warning("单篇文章下载被用户中断：%s", html)
+            return
     
     def extract_chapter_page(self, html):
         """提取章节页数"""
@@ -142,38 +157,20 @@ class Parser():
 
 
 if __name__ == "__main__":
-    from config_loader import load_config_for_url
+    from sites.config_loader import load_config_for_url
     test_url = "https://cn-sec.com/archives/category/安全文章"
     test_url = "https://cn-sec.com/archives/category/%e5%ae%89%e5%85%a8%e6%96%87%e7%ab%a0/%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e5%ae%89%e5%85%a8"
     # test_url = "https://cn-sec.com/archives/category/安全文章/page/2"
     # test_url = "https://cn-sec.com/archives/5000944.html"
-    test_url = "https://m.shuhaige.net/382358/"
+    test_url = "https://bbs.kanxue.com/thread-292523.htm"
     config = load_config_for_url(test_url)
-    # import yaml
-    # print("已加载配置：\n"
-    #   + yaml.safe_dump(
-    #     config,
-    #     allow_unicode=True,
-    #     sort_keys=False,
-    # ))
     parser = Parser(config)
-    # book_name = parser.get_book_name(test_url)
-    # chapters = parser.get_chapter_list(test_url)
-    # print(f"书名: {book_name}")
-    # print(f"章节数: {len(chapters)}")
-    # for chapter_no, (chapter_title, chapter_url) in chapters.items():
-    #     print(f"章节 {chapter_no}: {chapter_title} - {chapter_url}")
-    #     title, content = parser.get_chapter_content(chapter_url)
-    #     print(f"正文标题: {title}")
-    #     print(f"正文内容: {content[:100]}...")  # 打印前100个字符   
-    # urls = parser.extract_chapter_page(test_url)
-    # print(f"章节页数: {len(urls)}")
-
-    # urls = parser.get_chapter_list(test_url)
-    # print(f"章节数: {len(urls)}")
-
-    book_name = parser.get_book_name(test_url)
-    print(f"书名: {book_name}")
-    chapters = parser.get_chapter_list(test_url)
-    total_chapters = len(chapters)
-    print(f"章节数: {total_chapters}")
+    # response = parser.session.get(test_url, timeout=(5, 15))
+    # response.raise_for_status()
+    # with open("/home/wx/work/dev-project/crawler/output/html/page.html", "w", encoding="utf-8") as file:
+    #     file.write(response.text)
+    chapter_title, content = parser.get_chapter_content(test_url)
+    from tools.text_utils import safe_filename
+    save_title_name = safe_filename(chapter_title)
+    print(f"章节标题: {save_title_name}")
+    parser.download_single_article(save_title_name,test_url)

@@ -13,7 +13,7 @@ book:
 catalog:
   title_selector: "h2.title"
   page_mode: next_link
-  max_pages: 2
+  max_pages: 1
   
   page_selector: "select option"
   page_url_attr: "value"

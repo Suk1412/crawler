@@ -4,7 +4,7 @@ def safe_filename(name: str, fallback: str = "untitled") -> str:
       """把文本转换成单个安全的文件名或目录名。"""
       name = str(name).strip()
       # Windows、Linux 中会造成问题的字符；/ 尤其会变成路径。
-      name = re.sub(r'[<>:"/\\\\|?*\\x00-\\x1f]', "_", name)
+      name = re.sub(r'[<>:"/\\|?*\x00-\x1f]', "_", name)
       # 避免连续空格/替换符，并清除文件名末尾的空格与点。
       name = re.sub(r"\s+", " ", name).strip(" ._")
       # 防止名称过长。

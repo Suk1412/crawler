@@ -1,0 +1,27 @@
+domains:
+  - bbs.kanxue.com
+
+match:
+  path_regex: "^/thread-\\d+\\.htm$"
+  priority: 100
+
+entry_type: single_article
+
+book:
+  title_selector: "h3.subject"
+
+catalog:
+  # single_article 不使用目录字段；保留空选择器以兼容当前 Parser 初始化。
+  title_selector: ""
+  page_mode: single
+  page_selector: "select option"
+  page_url_attr: "value"
+
+  chapter_selector: "ul.read li a"
+  chapter_title: text
+  chapter_url_attr: href
+
+content:
+  title_selector: "h3.subject"
+  # 仅选择原帖正文，排除页面中 class 为 message_rich_type 的回复。
+  paragraph_selector: "div.message.message_md_type > p"

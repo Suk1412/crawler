@@ -62,10 +62,11 @@ def load_config_for_url(url: str) -> dict:
 
 
 if __name__ == "__main__":
-    test_url = 'https://m.shuhaige.net/382358/'
+    test_url = 'https://m.shuhaige.net/382360/'
     # test_url = "https://www.cnblogs.com/HarmonyOSSDK/p/21237380"
     # test_url = "https://cn-sec.com/archives/5000944.html"
     # test_url = "https://cn-sec.com/archives/category/安全文章"
+    # test_url = 'https://bbs.kanxue.com/thread-292523.htm'
     config = load_config_for_url(test_url)
     import yaml
     print("已加载配置：\n"

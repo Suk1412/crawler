@@ -2226,3 +2226,853 @@
 2026-08-13 17:33:55 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/这是聘了一名数字员工，还是请了一位黑客？.txt
 2026-08-13 17:33:55 | DEBUG    | core.processmanager | 已保存文章 24/24：这是聘了一名数字员工，还是请了一位黑客？
 2026-08-13 17:33:55 | INFO     | core.processmanager | 文章列表《人工智能安全》下载完成
+2026-08-17 09:27:40 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/category/安全文章/人工智能安全
+2026-08-17 09:27:40 | INFO     | sites.config_loader | 已加载配置：cn-sec-article-list.yaml（类型=article_list，优先级=90）
+2026-08-17 09:27:40 | INFO     | core.processmanager | 任务类型：article_list
+2026-08-17 09:27:40 | DEBUG    | sites.parser | 请求书籍/文章页：https://cn-sec.com/archives/category/安全文章/人工智能安全
+2026-08-17 09:27:40 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:27:41 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8 HTTP/1.1" 200 None
+2026-08-17 09:27:42 | DEBUG    | sites.parser | 书籍/文章名：人工智能安全
+2026-08-17 09:27:42 | INFO     | sites.parser | 目录分页模式：链接翻页
+2026-08-17 09:27:43 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8 HTTP/1.1" 200 None
+2026-08-17 09:27:44 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8/page/2 HTTP/1.1" 200 None
+2026-08-17 09:27:44 | WARNING  | sites.parser | 目录页达到最大限制 2，已停止继续翻页
+2026-08-17 09:27:44 | INFO     | sites.parser | 发现 2 个目录分页链接
+2026-08-17 09:27:44 | INFO     | sites.parser | 开始解析章节列表：目录页数量=2
+2026-08-17 09:27:44 | DEBUG    | sites.parser | 请求目录页：https://cn-sec.com/archives/category/安全文章/人工智能安全
+2026-08-17 09:27:45 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8 HTTP/1.1" 200 None
+2026-08-17 09:27:45 | DEBUG    | sites.parser | 请求目录页：https://cn-sec.com/archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8/page/2
+2026-08-17 09:27:47 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8/page/2 HTTP/1.1" 200 None
+2026-08-17 09:27:47 | INFO     | sites.parser | 章节列表解析完成：共发现 24 个章节
+2026-08-17 09:27:47 | INFO     | core.processmanager | 开始下载文章列表《人工智能安全》，共 24 篇
+2026-08-17 09:27:47 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391942.html
+2026-08-17 09:27:48 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391942.html HTTP/1.1" 200 None
+2026-08-17 09:27:48 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/神了,_eep_eek内部绝对有研究员爱玩__角色扮演.txt
+2026-08-17 09:27:48 | DEBUG    | core.processmanager | 已保存文章 1/24：神了,DeepSeek内部绝对有研究员爱玩AI角色扮演
+2026-08-17 09:27:48 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360575.html
+2026-08-17 09:27:49 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360575.html HTTP/1.1" 200 None
+2026-08-17 09:27:50 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/重磅：_ugging _ace 生产基础设施遭自主 __ _gent 协同入侵事件分析.txt
+2026-08-17 09:27:50 | DEBUG    | core.processmanager | 已保存文章 2/24：重磅：Hugging Face 生产基础设施遭自主 AI Agent 协同入侵事件分析
+2026-08-17 09:27:50 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360608.html
+2026-08-17 09:27:50 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360608.html HTTP/1.1" 200 None
+2026-08-17 09:27:50 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/恐怖！_ 分钟搭建僵尸网络，__ 彻底废掉传统网络防御.txt
+2026-08-17 09:27:50 | DEBUG    | core.processmanager | 已保存文章 3/24：恐怖！6 分钟搭建僵尸网络，AI 彻底废掉传统网络防御
+2026-08-17 09:27:50 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391645.html
+2026-08-17 09:27:50 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391645.html HTTP/1.1" 200 None
+2026-08-17 09:27:50 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/ugging _ace事件反思：_gent攻击者已经到来.txt
+2026-08-17 09:27:50 | DEBUG    | core.processmanager | 已保存文章 4/24：Hugging Face事件反思：Agent攻击者已经到来
+2026-08-17 09:27:50 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391683.html
+2026-08-17 09:27:51 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391683.html HTTP/1.1" 200 None
+2026-08-17 09:27:51 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/腾讯__hysical __ _gent：人形机器人平台的具身智能安全威胁建模.txt
+2026-08-17 09:27:51 | DEBUG    | core.processmanager | 已保存文章 5/24：腾讯_Physical AI Agent：人形机器人平台的具身智能安全威胁建模
+2026-08-17 09:27:51 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360671.html
+2026-08-17 09:27:52 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360671.html HTTP/1.1" 200 None
+2026-08-17 09:27:52 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/补丁公开_漏洞暴露：___-_._ _ol _ltra 把打补丁变成了造武器.txt
+2026-08-17 09:27:52 | DEBUG    | core.processmanager | 已保存文章 6/24：补丁公开=漏洞暴露：GPT-5.6 Sol Ultra 把打补丁变成了造武器
+2026-08-17 09:27:52 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360742.html
+2026-08-17 09:27:53 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360742.html HTTP/1.1" 200 None
+2026-08-17 09:27:54 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/ndroid apk客户端黑盒漏洞挖掘skills.txt
+2026-08-17 09:27:54 | DEBUG    | core.processmanager | 已保存文章 7/24：Android apk客户端黑盒漏洞挖掘skills
+2026-08-17 09:27:54 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391483.html
+2026-08-17 09:27:54 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391483.html HTTP/1.1" 200 None
+2026-08-17 09:27:55 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/eep_eek _arness邪修玩法大全，带你快速上手！.txt
+2026-08-17 09:27:55 | DEBUG    | core.processmanager | 已保存文章 8/24：DeepSeek Harness邪修玩法大全，带你快速上手！
+2026-08-17 09:27:55 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360826.html
+2026-08-17 09:27:56 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360826.html HTTP/1.1" 200 None
+2026-08-17 09:27:56 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/危！___-_._会自动删文件，__初创老板痛失整台_ac.txt
+2026-08-17 09:27:56 | DEBUG    | core.processmanager | 已保存文章 9/24：危！GPT-5.6会自动删文件，AI初创老板痛失整台Mac
+2026-08-17 09:27:56 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:27:57 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:27:57 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/eur___'__ & _____'__ _ 用 _ernel ___ 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:27:57 | DEBUG    | core.processmanager | 已保存文章 10/24：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:27:57 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361163.html
+2026-08-17 09:27:58 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361163.html HTTP/1.1" 200 None
+2026-08-17 09:27:59 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/olmes___ 实战：让 __ 把告警、日志和指标串成故障线索.txt
+2026-08-17 09:27:59 | DEBUG    | core.processmanager | 已保存文章 11/24：HolmesGPT 实战：让 AI 把告警、日志和指标串成故障线索
+2026-08-17 09:27:59 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361246.html
+2026-08-17 09:28:00 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361246.html HTTP/1.1" 200 None
+2026-08-17 09:28:00 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/新型僵尸网络专偷__服务___密钥.txt
+2026-08-17 09:28:00 | DEBUG    | core.processmanager | 已保存文章 12/24：新型僵尸网络专偷AI服务API密钥
+2026-08-17 09:28:00 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391199.html
+2026-08-17 09:28:01 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391199.html HTTP/1.1" 200 None
+2026-08-17 09:28:01 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/【__安全】____gent_ench爆雷！_gent承认风险后仍照样违规.txt
+2026-08-17 09:28:01 | DEBUG    | core.processmanager | 已保存文章 13/24：【AI安全】REDAgentBench爆雷！Agent承认风险后仍照样违规
+2026-08-17 09:28:01 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391290.html
+2026-08-17 09:28:02 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391290.html HTTP/1.1" 200 None
+2026-08-17 09:28:02 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/nthropic发布_laude文本水印技术.txt
+2026-08-17 09:28:02 | DEBUG    | core.processmanager | 已保存文章 14/24：Anthropic发布Claude文本水印技术
+2026-08-17 09:28:02 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391323.html
+2026-08-17 09:28:03 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391323.html HTTP/1.1" 200 None
+2026-08-17 09:28:03 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/如何打造自动化漏洞挖掘 _kills：从资产发现、_o_ 验证到证据链报告.txt
+2026-08-17 09:28:03 | DEBUG    | core.processmanager | 已保存文章 15/24：如何打造自动化漏洞挖掘 Skills：从资产发现、PoC 验证到证据链报告
+2026-08-17 09:28:03 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5362244.html
+2026-08-17 09:28:04 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5362244.html HTTP/1.1" 200 None
+2026-08-17 09:28:04 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/美国拟立法监管大模型：当__失控时要给它拔电源？.txt
+2026-08-17 09:28:04 | DEBUG    | core.processmanager | 已保存文章 16/24：美国拟立法监管大模型：当AI失控时要给它拔电源？
+2026-08-17 09:28:04 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5362709.html
+2026-08-17 09:28:05 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5362709.html HTTP/1.1" 200 None
+2026-08-17 09:28:06 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/美国国务院发布生成式人工智能行动指南.txt
+2026-08-17 09:28:06 | DEBUG    | core.processmanager | 已保存文章 17/24：美国国务院发布生成式人工智能行动指南
+2026-08-17 09:28:06 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391090.html
+2026-08-17 09:28:07 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391090.html HTTP/1.1" 200 None
+2026-08-17 09:28:07 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/oken _acking攻击窃取___密钥，导致近百万美元损失.txt
+2026-08-17 09:28:07 | DEBUG    | core.processmanager | 已保存文章 18/24：AI Token Jacking攻击窃取API密钥，导致近百万美元损失
+2026-08-17 09:28:07 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5362957.html
+2026-08-17 09:28:08 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5362957.html HTTP/1.1" 200 None
+2026-08-17 09:28:08 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/自研__渗透测试工具实测：效率暴增___%，但问题与机会并存.txt
+2026-08-17 09:28:08 | DEBUG    | core.processmanager | 已保存文章 19/24：自研AI渗透测试工具实测：效率暴增800%，但问题与机会并存
+2026-08-17 09:28:08 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5390913.html
+2026-08-17 09:28:09 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5390913.html HTTP/1.1" 200 None
+2026-08-17 09:28:09 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/我用_orkbuddy搭了两个工作台：一个管工作，一个管娃的学习.txt
+2026-08-17 09:28:09 | DEBUG    | core.processmanager | 已保存文章 20/24：我用Workbuddy搭了两个工作台：一个管工作，一个管娃的学习
+2026-08-17 09:28:09 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5390926.html
+2026-08-17 09:28:10 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5390926.html HTTP/1.1" 200 None
+2026-08-17 09:28:10 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/一个中国团队，正在挑战 _ode_ 和 _laude 的答案.txt
+2026-08-17 09:28:10 | DEBUG    | core.processmanager | 已保存文章 21/24：一个中国团队，正在挑战 Codex 和 Claude 的答案
+2026-08-17 09:28:10 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5390797.html
+2026-08-17 09:28:11 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5390797.html HTTP/1.1" 200 None
+2026-08-17 09:28:11 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/eep_eek _arness：一夜_万星，一切皆插件的__智能体框架深度解读.txt
+2026-08-17 09:28:11 | DEBUG    | core.processmanager | 已保存文章 22/24：DeepSeek Harness：一夜5万星，一切皆插件的AI智能体框架深度解读
+2026-08-17 09:28:11 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5390851.html
+2026-08-17 09:28:12 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5390851.html HTTP/1.1" 200 None
+2026-08-17 09:28:12 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/【__安全】___-_raph进化！共享记忆带上权限与信任血缘.txt
+2026-08-17 09:28:12 | DEBUG    | core.processmanager | 已保存文章 23/24：【AI安全】MAP-Graph进化！共享记忆带上权限与信任血缘
+2026-08-17 09:28:12 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5390831.html
+2026-08-17 09:28:13 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5390831.html HTTP/1.1" 200 None
+2026-08-17 09:28:13 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/暗藏白字提示词注入：原告企图利用隐藏指令操控审理案件的.txt
+2026-08-17 09:28:13 | DEBUG    | core.processmanager | 已保存文章 24/24：暗藏白字提示词注入：原告企图利用隐藏指令操控审理案件的 AI
+2026-08-17 09:28:13 | INFO     | core.processmanager | 文章列表《人工智能安全》下载完成
+2026-08-17 09:30:35 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 09:30:35 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:30:35 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:30:35 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:30:35 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:30:36 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:30:48 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5387823.html
+2026-08-17 09:30:48 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:30:48 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:30:48 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5387823.html
+2026-08-17 09:30:48 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:30:50 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5387823.html HTTP/1.1" 200 None
+2026-08-17 09:36:57 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5387823.html
+2026-08-17 09:36:57 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:36:57 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:36:57 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5387823.html
+2026-08-17 09:36:57 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:36:59 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5387823.html HTTP/1.1" 200 None
+2026-08-17 09:36:59 | INFO     | core.storage | ------------《single_article》---------------
+2026-08-17 09:37:52 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5387823.html
+2026-08-17 09:37:52 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:37:52 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:37:52 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5387823.html
+2026-08-17 09:37:52 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:37:53 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5387823.html HTTP/1.1" 200 None
+2026-08-17 09:37:54 | INFO     | core.storage | ------------《single_article》---------------
+2026-08-17 09:37:54 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/从平方根到 _root：用 __cel 中的 _ython 在 _zure 容器里提权.txt
+2026-08-17 09:37:54 | INFO     | core.processmanager | 单篇文章已保存：从平方根到 /root：用 Excel 中的 Python 在 Azure 容器里提权
+2026-08-17 09:38:51 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 09:38:51 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:38:51 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:38:51 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:38:51 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:38:52 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:38:52 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/eur___'__ & _____'__ _ 用 _ernel ___ 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:38:52 | INFO     | core.processmanager | 单篇文章已保存：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:42:18 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 09:42:18 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:42:18 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:42:18 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:42:18 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:42:19 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:42:20 | INFO     | core.storage | 正在保存章节：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:42:20 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/eur___'__ & _____'__ _ 用 _ernel ___ 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:42:20 | INFO     | core.processmanager | 单篇文章已保存：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:43:41 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 09:43:41 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:43:41 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:43:41 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:43:41 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:43:42 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:43:43 | INFO     | core.storage | 正在保存章节：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:43:43 | INFO     | core.storage | 正在保存章节2：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:43:43 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/eur___'__ & _____'__ _ 用 _ernel ___ 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:43:43 | INFO     | core.processmanager | 单篇文章已保存：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:44:06 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 09:44:06 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:44:06 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:44:06 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:44:06 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:44:08 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:44:08 | INFO     | core.storage | 正在保存章节：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:44:08 | INFO     | core.storage | 正在保存章节2：eur___'__ & _____'__ _ 用 _ernel ___ 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:44:08 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/eur___'__ & _____'__ _ 用 _ernel ___ 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:44:08 | INFO     | core.processmanager | 单篇文章已保存：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:45:58 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 09:45:58 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 09:45:58 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 09:45:58 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:45:58 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:45:59 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:46:00 | INFO     | core.storage | 正在保存章节：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:46:00 | INFO     | core.storage | 正在保存章节2：NeurIPS'24 & TPAMI'26 _ 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:46:00 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/NeurIPS'24 & TPAMI'26 _ 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:46:00 | INFO     | core.processmanager | 单篇文章已保存：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:48:57 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/category/安全文章/人工智能安全
+2026-08-17 09:48:57 | INFO     | sites.config_loader | 已加载配置：cn-sec-article-list.yaml（类型=article_list，优先级=90）
+2026-08-17 09:48:57 | INFO     | core.processmanager | 任务类型：article_list
+2026-08-17 09:48:57 | DEBUG    | sites.parser | 请求书籍/文章页：https://cn-sec.com/archives/category/安全文章/人工智能安全
+2026-08-17 09:48:57 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 09:48:57 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8 HTTP/1.1" 200 None
+2026-08-17 09:48:57 | DEBUG    | sites.parser | 书籍/文章名：人工智能安全
+2026-08-17 09:48:57 | INFO     | sites.parser | 目录分页模式：链接翻页
+2026-08-17 09:48:58 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8 HTTP/1.1" 200 None
+2026-08-17 09:48:58 | WARNING  | sites.parser | 目录页达到最大限制 1，已停止继续翻页
+2026-08-17 09:48:58 | INFO     | sites.parser | 发现 1 个目录分页链接
+2026-08-17 09:48:58 | INFO     | sites.parser | 开始解析章节列表：目录页数量=1
+2026-08-17 09:48:58 | DEBUG    | sites.parser | 请求目录页：https://cn-sec.com/archives/category/安全文章/人工智能安全
+2026-08-17 09:48:59 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/category/%E5%AE%89%E5%85%A8%E6%96%87%E7%AB%A0/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8 HTTP/1.1" 200 None
+2026-08-17 09:48:59 | INFO     | sites.parser | 章节列表解析完成：共发现 12 个章节
+2026-08-17 09:48:59 | INFO     | core.processmanager | 开始下载文章列表《人工智能安全》，共 12 篇
+2026-08-17 09:48:59 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391942.html
+2026-08-17 09:48:59 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391942.html HTTP/1.1" 200 None
+2026-08-17 09:49:00 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/神了,DeepSeek内部绝对有研究员爱玩AI角色扮演.txt
+2026-08-17 09:49:00 | DEBUG    | core.processmanager | 已保存文章 1/12：神了,DeepSeek内部绝对有研究员爱玩AI角色扮演
+2026-08-17 09:49:00 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360575.html
+2026-08-17 09:49:00 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360575.html HTTP/1.1" 200 None
+2026-08-17 09:49:01 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/重磅：Hugging Face 生产基础设施遭自主 AI Agent 协同入侵事件分析.txt
+2026-08-17 09:49:01 | DEBUG    | core.processmanager | 已保存文章 2/12：重磅：Hugging Face 生产基础设施遭自主 AI Agent 协同入侵事件分析
+2026-08-17 09:49:01 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360608.html
+2026-08-17 09:49:01 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360608.html HTTP/1.1" 200 None
+2026-08-17 09:49:01 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/恐怖！6 分钟搭建僵尸网络，AI 彻底废掉传统网络防御.txt
+2026-08-17 09:49:01 | DEBUG    | core.processmanager | 已保存文章 3/12：恐怖！6 分钟搭建僵尸网络，AI 彻底废掉传统网络防御
+2026-08-17 09:49:01 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391645.html
+2026-08-17 09:49:02 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391645.html HTTP/1.1" 200 None
+2026-08-17 09:49:02 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/Hugging Face事件反思：Agent攻击者已经到来.txt
+2026-08-17 09:49:02 | DEBUG    | core.processmanager | 已保存文章 4/12：Hugging Face事件反思：Agent攻击者已经到来
+2026-08-17 09:49:02 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391683.html
+2026-08-17 09:49:03 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391683.html HTTP/1.1" 200 None
+2026-08-17 09:49:03 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/腾讯_Physical AI Agent：人形机器人平台的具身智能安全威胁建模.txt
+2026-08-17 09:49:03 | DEBUG    | core.processmanager | 已保存文章 5/12：腾讯_Physical AI Agent：人形机器人平台的具身智能安全威胁建模
+2026-08-17 09:49:03 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360671.html
+2026-08-17 09:49:04 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360671.html HTTP/1.1" 200 None
+2026-08-17 09:49:04 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/补丁公开=漏洞暴露：GPT-5.6 Sol Ultra 把打补丁变成了造武器.txt
+2026-08-17 09:49:04 | DEBUG    | core.processmanager | 已保存文章 6/12：补丁公开=漏洞暴露：GPT-5.6 Sol Ultra 把打补丁变成了造武器
+2026-08-17 09:49:04 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360742.html
+2026-08-17 09:49:05 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360742.html HTTP/1.1" 200 None
+2026-08-17 09:49:06 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/Android apk客户端黑盒漏洞挖掘skills.txt
+2026-08-17 09:49:06 | DEBUG    | core.processmanager | 已保存文章 7/12：Android apk客户端黑盒漏洞挖掘skills
+2026-08-17 09:49:06 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5391483.html
+2026-08-17 09:49:06 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5391483.html HTTP/1.1" 200 None
+2026-08-17 09:49:07 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/DeepSeek Harness邪修玩法大全，带你快速上手！.txt
+2026-08-17 09:49:07 | DEBUG    | core.processmanager | 已保存文章 8/12：DeepSeek Harness邪修玩法大全，带你快速上手！
+2026-08-17 09:49:07 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5360826.html
+2026-08-17 09:49:08 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5360826.html HTTP/1.1" 200 None
+2026-08-17 09:49:08 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/危！GPT-5.6会自动删文件，AI初创老板痛失整台Mac.txt
+2026-08-17 09:49:08 | DEBUG    | core.processmanager | 已保存文章 9/12：危！GPT-5.6会自动删文件，AI初创老板痛失整台Mac
+2026-08-17 09:49:08 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 09:49:09 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 09:49:09 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/NeurIPS'24 & TPAMI'26 _ 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 09:49:09 | DEBUG    | core.processmanager | 已保存文章 10/12：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 09:49:09 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361163.html
+2026-08-17 09:49:10 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361163.html HTTP/1.1" 200 None
+2026-08-17 09:49:10 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/HolmesGPT 实战：让 AI 把告警、日志和指标串成故障线索.txt
+2026-08-17 09:49:10 | DEBUG    | core.processmanager | 已保存文章 11/12：HolmesGPT 实战：让 AI 把告警、日志和指标串成故障线索
+2026-08-17 09:49:10 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361246.html
+2026-08-17 09:49:11 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361246.html HTTP/1.1" 200 None
+2026-08-17 09:49:12 | DEBUG    | core.storage | 文件已写入：output/人工智能安全/新型僵尸网络专偷AI服务API密钥.txt
+2026-08-17 09:49:12 | DEBUG    | core.processmanager | 已保存文章 12/12：新型僵尸网络专偷AI服务API密钥
+2026-08-17 09:49:12 | INFO     | core.processmanager | 文章列表《人工智能安全》下载完成
+2026-08-17 11:26:49 | DEBUG    | sites.config_loader | 开始匹配配置：domain=bbs.kanxue.com, path=/thread-292523.htm
+2026-08-17 11:26:49 | INFO     | sites.config_loader | 已加载配置：kanxue-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 11:26:49 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 11:26:49 | DEBUG    | sites.parser | 请求正文页：https://bbs.kanxue.com/thread-292523.htm
+2026-08-17 11:26:49 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): bbs.kanxue.com:443
+2026-08-17 11:26:49 | DEBUG    | urllib3.connectionpool | https://bbs.kanxue.com:443 "GET /thread-292523.htm HTTP/1.1" 200 None
+2026-08-17 11:26:49 | DEBUG    | urllib3.connectionpool | https://bbs.kanxue.com:443 "GET /thread-292523.htm HTTP/1.1" 200 None
+2026-08-17 11:26:49 | INFO     | sites.parser | HTML页面已保存：[原创]浅析 Google Play 自动保护（PairIP）：代码虚拟化、TEE 密钥与运行时反篡改
+2026-08-17 11:26:49 | DEBUG    | core.storage | 文件已写入：output/bbs.kanxue.com/[原创]浅析 Google Play 自动保护（PairIP）：代码虚拟化、TEE 密钥与运行时反篡改.txt
+2026-08-17 11:26:49 | INFO     | core.processmanager | 单篇文章已保存：[原创]浅析 Google Play 自动保护（PairIP）：代码虚拟化、TEE 密钥与运行时反篡改
+2026-08-17 11:27:14 | DEBUG    | sites.config_loader | 开始匹配配置：domain=bbs.kanxue.com, path=/thread-292523.htm
+2026-08-17 11:27:14 | INFO     | sites.config_loader | 已加载配置：kanxue-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 11:27:14 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 11:27:14 | DEBUG    | sites.parser | 请求正文页：https://bbs.kanxue.com/thread-292523.htm
+2026-08-17 11:27:14 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): bbs.kanxue.com:443
+2026-08-17 11:27:14 | DEBUG    | urllib3.connectionpool | https://bbs.kanxue.com:443 "GET /thread-292523.htm HTTP/1.1" 200 None
+2026-08-17 11:27:14 | DEBUG    | urllib3.connectionpool | https://bbs.kanxue.com:443 "GET /thread-292523.htm HTTP/1.1" 200 None
+2026-08-17 11:27:14 | INFO     | sites.parser | HTML页面已保存：[原创]浅析 Google Play 自动保护（PairIP）：代码虚拟化、TEE 密钥与运行时反篡改
+2026-08-17 11:27:14 | DEBUG    | core.storage | 文件已写入：output/bbs.kanxue.com/[原创]浅析 Google Play 自动保护（PairIP）：代码虚拟化、TEE 密钥与运行时反篡改.txt
+2026-08-17 11:27:14 | INFO     | core.processmanager | 单篇文章已保存：[原创]浅析 Google Play 自动保护（PairIP）：代码虚拟化、TEE 密钥与运行时反篡改
+2026-08-17 11:27:34 | DEBUG    | sites.config_loader | 开始匹配配置：domain=cn-sec.com, path=/archives/5361156.html
+2026-08-17 11:27:34 | INFO     | sites.config_loader | 已加载配置：cn-sec-single-article.yaml（类型=single_article，优先级=100）
+2026-08-17 11:27:34 | INFO     | core.processmanager | 任务类型：single_article
+2026-08-17 11:27:34 | DEBUG    | sites.parser | 请求正文页：https://cn-sec.com/archives/5361156.html
+2026-08-17 11:27:34 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): cn-sec.com:443
+2026-08-17 11:27:36 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 11:27:37 | DEBUG    | urllib3.connectionpool | https://cn-sec.com:443 "GET /archives/5361156.html HTTP/1.1" 200 None
+2026-08-17 11:27:37 | INFO     | sites.parser | HTML页面已保存：NeurIPS'24 & TPAMI'26 _ 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 11:27:37 | DEBUG    | core.storage | 文件已写入：output/cn-sec.com/NeurIPS'24 & TPAMI'26 _ 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似.txt
+2026-08-17 11:27:37 | INFO     | core.processmanager | 单篇文章已保存：NeurIPS'24 & TPAMI'26 | 用 Kernel PCA 理解分布外检测：从非线性特征子空间到高效核近似
+2026-08-17 11:48:44 | DEBUG    | sites.config_loader | 开始匹配配置：domain=m.shuhaige.net, path=/382360/
+2026-08-17 11:48:44 | INFO     | sites.config_loader | 已加载配置：shuhaige.yaml（类型=catalog，优先级=0）
+2026-08-17 11:48:44 | INFO     | core.processmanager | 任务类型：catalog
+2026-08-17 11:48:44 | DEBUG    | sites.parser | 请求书籍/文章页：https://m.shuhaige.net/382360/
+2026-08-17 11:48:44 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): m.shuhaige.net:443
+2026-08-17 11:48:45 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/ HTTP/1.1" 200 None
+2026-08-17 11:48:45 | DEBUG    | sites.parser | 书籍/文章名：从斩神开始，我的分身遍布全宇宙
+2026-08-17 11:48:45 | DEBUG    | sites.parser | 目录分页模式：所以页链接
+2026-08-17 11:48:45 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/ HTTP/1.1" 200 None
+2026-08-17 11:48:45 | INFO     | sites.parser | 发现 3 个目录分页链接
+2026-08-17 11:48:45 | INFO     | sites.parser | 开始解析章节列表：目录页数量=3
+2026-08-17 11:48:45 | DEBUG    | sites.parser | 请求目录页：https://m.shuhaige.net/382360_1/
+2026-08-17 11:48:46 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360_1/ HTTP/1.1" 200 None
+2026-08-17 11:48:46 | DEBUG    | sites.parser | 请求目录页：https://m.shuhaige.net/382360_2/
+2026-08-17 11:48:46 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360_2/ HTTP/1.1" 200 None
+2026-08-17 11:48:46 | DEBUG    | sites.parser | 请求目录页：https://m.shuhaige.net/382360_3/
+2026-08-17 11:48:47 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360_3/ HTTP/1.1" 200 None
+2026-08-17 11:48:47 | INFO     | sites.parser | 章节列表解析完成：共发现 136 个章节
+2026-08-17 11:48:47 | INFO     | core.processmanager | 开始下载《从斩神开始，我的分身遍布全宇宙》，共 136 章
+2026-08-17 11:48:47 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269788.html
+2026-08-17 11:48:47 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269788.html HTTP/1.1" 200 None
+2026-08-17 11:48:47 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第001章 穿越.txt
+2026-08-17 11:48:47 | DEBUG    | core.processmanager | 已保存章节 1/136：第1章 穿越
+2026-08-17 11:48:47 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269789.html
+2026-08-17 11:48:48 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269789.html HTTP/1.1" 200 None
+2026-08-17 11:48:48 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第002章 祖树.txt
+2026-08-17 11:48:48 | DEBUG    | core.processmanager | 已保存章节 2/136：第2章 祖树
+2026-08-17 11:48:48 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269790.html
+2026-08-17 11:48:48 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269790.html HTTP/1.1" 200 None
+2026-08-17 11:48:48 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第003章 排斥.txt
+2026-08-17 11:48:48 | DEBUG    | core.processmanager | 已保存章节 3/136：第3章 排斥
+2026-08-17 11:48:48 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269791.html
+2026-08-17 11:48:48 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269791.html HTTP/1.1" 200 None
+2026-08-17 11:48:48 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第004章 极昼.txt
+2026-08-17 11:48:48 | DEBUG    | core.processmanager | 已保存章节 4/136：第4章 极昼
+2026-08-17 11:48:48 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269793.html
+2026-08-17 11:48:48 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269793.html HTTP/1.1" 200 None
+2026-08-17 11:48:48 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第005章 奇特的句芒人.txt
+2026-08-17 11:48:48 | DEBUG    | core.processmanager | 已保存章节 5/136：第5章 奇特的句芒人
+2026-08-17 11:48:48 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269795.html
+2026-08-17 11:48:49 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269795.html HTTP/1.1" 200 None
+2026-08-17 11:48:49 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第006章 外来者.txt
+2026-08-17 11:48:49 | DEBUG    | core.processmanager | 已保存章节 6/136：第6章 外来者
+2026-08-17 11:48:49 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269796.html
+2026-08-17 11:48:49 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269796.html HTTP/1.1" 200 None
+2026-08-17 11:48:49 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第007章 制衣.txt
+2026-08-17 11:48:49 | DEBUG    | core.processmanager | 已保存章节 7/136：第7章 制衣
+2026-08-17 11:48:49 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269797.html
+2026-08-17 11:48:49 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269797.html HTTP/1.1" 200 None
+2026-08-17 11:48:49 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第008章 来袭.txt
+2026-08-17 11:48:49 | DEBUG    | core.processmanager | 已保存章节 8/136：第8章 来袭
+2026-08-17 11:48:49 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269798.html
+2026-08-17 11:48:50 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269798.html HTTP/1.1" 200 None
+2026-08-17 11:48:50 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第009章 救人.txt
+2026-08-17 11:48:50 | DEBUG    | core.processmanager | 已保存章节 9/136：第9章 救人
+2026-08-17 11:48:50 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269799.html
+2026-08-17 11:48:50 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269799.html HTTP/1.1" 200 None
+2026-08-17 11:48:50 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第010章 噫噫兽.txt
+2026-08-17 11:48:50 | DEBUG    | core.processmanager | 已保存章节 10/136：第10章 噫噫兽
+2026-08-17 11:48:50 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269800.html
+2026-08-17 11:48:50 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269800.html HTTP/1.1" 200 None
+2026-08-17 11:48:50 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第011章 苏瑜.txt
+2026-08-17 11:48:50 | DEBUG    | core.processmanager | 已保存章节 11/136：第11章 苏瑜
+2026-08-17 11:48:50 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269801.html
+2026-08-17 11:48:50 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269801.html HTTP/1.1" 200 None
+2026-08-17 11:48:50 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第012章 命定.txt
+2026-08-17 11:48:50 | DEBUG    | core.processmanager | 已保存章节 12/136：第12章 命定
+2026-08-17 11:48:50 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269802.html
+2026-08-17 11:48:51 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269802.html HTTP/1.1" 200 None
+2026-08-17 11:48:51 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第013章 风暴.txt
+2026-08-17 11:48:51 | DEBUG    | core.processmanager | 已保存章节 13/136：第13章 风暴
+2026-08-17 11:48:51 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269803.html
+2026-08-17 11:48:52 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269803.html HTTP/1.1" 200 None
+2026-08-17 11:48:52 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第014章 峡谷.txt
+2026-08-17 11:48:52 | DEBUG    | core.processmanager | 已保存章节 14/136：第14章 峡谷
+2026-08-17 11:48:52 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269805.html
+2026-08-17 11:48:52 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269805.html HTTP/1.1" 200 None
+2026-08-17 11:48:52 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第015章 她是神吗？.txt
+2026-08-17 11:48:52 | DEBUG    | core.processmanager | 已保存章节 15/136：第15章 她是神吗？
+2026-08-17 11:48:52 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269806.html
+2026-08-17 11:48:52 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269806.html HTTP/1.1" 200 None
+2026-08-17 11:48:52 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第016章 火髓.txt
+2026-08-17 11:48:52 | DEBUG    | core.processmanager | 已保存章节 16/136：第16章 火髓
+2026-08-17 11:48:52 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269807.html
+2026-08-17 11:48:53 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269807.html HTTP/1.1" 200 None
+2026-08-17 11:48:53 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第017章 锤炼.txt
+2026-08-17 11:48:53 | DEBUG    | core.processmanager | 已保存章节 17/136：第17章 锤炼
+2026-08-17 11:48:53 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269808.html
+2026-08-17 11:48:53 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269808.html HTTP/1.1" 200 None
+2026-08-17 11:48:53 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第018章 巫————.txt
+2026-08-17 11:48:53 | DEBUG    | core.processmanager | 已保存章节 18/136：第18章 巫————
+2026-08-17 11:48:53 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269809.html
+2026-08-17 11:48:54 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269809.html HTTP/1.1" 200 None
+2026-08-17 11:48:54 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第019章 苏瑜的信息.txt
+2026-08-17 11:48:54 | DEBUG    | core.processmanager | 已保存章节 19/136：第19章 苏瑜的信息
+2026-08-17 11:48:54 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269810.html
+2026-08-17 11:48:54 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269810.html HTTP/1.1" 200 None
+2026-08-17 11:48:54 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第020章 无根浮萍.txt
+2026-08-17 11:48:54 | DEBUG    | core.processmanager | 已保存章节 20/136：第20章 无根浮萍
+2026-08-17 11:48:54 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269811.html
+2026-08-17 11:48:55 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269811.html HTTP/1.1" 200 None
+2026-08-17 11:48:55 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第021章 还真是一份大礼.txt
+2026-08-17 11:48:55 | DEBUG    | core.processmanager | 已保存章节 21/136：第21章 还真是一份大礼
+2026-08-17 11:48:55 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269812.html
+2026-08-17 11:48:56 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269812.html HTTP/1.1" 200 None
+2026-08-17 11:48:56 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第022章 所有人都死了.txt
+2026-08-17 11:48:56 | DEBUG    | core.processmanager | 已保存章节 22/136：第22章 所有人都死了
+2026-08-17 11:48:56 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269813.html
+2026-08-17 11:48:57 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269813.html HTTP/1.1" 200 None
+2026-08-17 11:48:57 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第023章 说吧，一切.txt
+2026-08-17 11:48:57 | DEBUG    | core.processmanager | 已保存章节 23/136：第23章 说吧，一切
+2026-08-17 11:48:57 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269815.html
+2026-08-17 11:48:58 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269815.html HTTP/1.1" 200 None
+2026-08-17 11:48:58 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第024章 苏瑜与它.txt
+2026-08-17 11:48:58 | DEBUG    | core.processmanager | 已保存章节 24/136：第24章 苏瑜与它
+2026-08-17 11:48:58 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269816.html
+2026-08-17 11:48:58 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269816.html HTTP/1.1" 200 None
+2026-08-17 11:48:58 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第025章 孔怜.txt
+2026-08-17 11:48:58 | DEBUG    | core.processmanager | 已保存章节 25/136：第25章 孔怜
+2026-08-17 11:48:58 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269818.html
+2026-08-17 11:48:59 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269818.html HTTP/1.1" 200 None
+2026-08-17 11:48:59 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第026章 战争.txt
+2026-08-17 11:48:59 | DEBUG    | core.processmanager | 已保存章节 26/136：第26章 战争
+2026-08-17 11:48:59 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269819.html
+2026-08-17 11:49:00 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269819.html HTTP/1.1" 200 None
+2026-08-17 11:49:00 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第027章 祖神.txt
+2026-08-17 11:49:00 | DEBUG    | core.processmanager | 已保存章节 27/136：第27章 祖神
+2026-08-17 11:49:00 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269820.html
+2026-08-17 11:49:00 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269820.html HTTP/1.1" 200 None
+2026-08-17 11:49:00 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第028章 你就是我，我就是你.txt
+2026-08-17 11:49:00 | DEBUG    | core.processmanager | 已保存章节 28/136：第28章 你就是我，我就是你
+2026-08-17 11:49:00 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269821.html
+2026-08-17 11:49:01 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269821.html HTTP/1.1" 200 None
+2026-08-17 11:49:01 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第029章 王者归来.txt
+2026-08-17 11:49:01 | DEBUG    | core.processmanager | 已保存章节 29/136：第29章 王者归来
+2026-08-17 11:49:01 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269822.html
+2026-08-17 11:49:01 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269822.html HTTP/1.1" 200 None
+2026-08-17 11:49:01 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第030章 老朋友.txt
+2026-08-17 11:49:01 | DEBUG    | core.processmanager | 已保存章节 30/136：第30章 老朋友
+2026-08-17 11:49:01 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269823.html
+2026-08-17 11:49:02 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269823.html HTTP/1.1" 200 None
+2026-08-17 11:49:02 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第031章 神将.txt
+2026-08-17 11:49:02 | DEBUG    | core.processmanager | 已保存章节 31/136：第31章 神将
+2026-08-17 11:49:02 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269824.html
+2026-08-17 11:49:03 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269824.html HTTP/1.1" 200 None
+2026-08-17 11:49:03 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第032章 登徒子.txt
+2026-08-17 11:49:03 | DEBUG    | core.processmanager | 已保存章节 32/136：第32章 登徒子
+2026-08-17 11:49:03 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269825.html
+2026-08-17 11:49:03 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269825.html HTTP/1.1" 200 None
+2026-08-17 11:49:03 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第033章 魅魔.txt
+2026-08-17 11:49:03 | DEBUG    | core.processmanager | 已保存章节 33/136：第33章 魅魔
+2026-08-17 11:49:03 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269826.html
+2026-08-17 11:49:04 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269826.html HTTP/1.1" 200 None
+2026-08-17 11:49:04 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第034章 让人呕吐.txt
+2026-08-17 11:49:04 | DEBUG    | core.processmanager | 已保存章节 34/136：第34章 让人呕吐
+2026-08-17 11:49:04 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269827.html
+2026-08-17 11:49:04 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269827.html HTTP/1.1" 200 None
+2026-08-17 11:49:04 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第035章 先生存下来再说.txt
+2026-08-17 11:49:04 | DEBUG    | core.processmanager | 已保存章节 35/136：第35章 先生存下来再说
+2026-08-17 11:49:04 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269829.html
+2026-08-17 11:49:05 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269829.html HTTP/1.1" 200 None
+2026-08-17 11:49:05 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第036章 训狗.txt
+2026-08-17 11:49:05 | DEBUG    | core.processmanager | 已保存章节 36/136：第36章 训狗
+2026-08-17 11:49:05 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269831.html
+2026-08-17 11:49:06 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269831.html HTTP/1.1" 200 None
+2026-08-17 11:49:06 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第037章 覆灭.txt
+2026-08-17 11:49:06 | DEBUG    | core.processmanager | 已保存章节 37/136：第37章 覆灭
+2026-08-17 11:49:06 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269832.html
+2026-08-17 11:49:06 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269832.html HTTP/1.1" 200 None
+2026-08-17 11:49:06 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第038章 监视.txt
+2026-08-17 11:49:06 | DEBUG    | core.processmanager | 已保存章节 38/136：第38章 监视
+2026-08-17 11:49:06 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269834.html
+2026-08-17 11:49:07 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269834.html HTTP/1.1" 200 None
+2026-08-17 11:49:07 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第039章 认亲.txt
+2026-08-17 11:49:07 | DEBUG    | core.processmanager | 已保存章节 39/136：第39章 认亲
+2026-08-17 11:49:07 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269835.html
+2026-08-17 11:49:08 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269835.html HTTP/1.1" 200 None
+2026-08-17 11:49:08 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第040章 公主.txt
+2026-08-17 11:49:08 | DEBUG    | core.processmanager | 已保存章节 40/136：第40章 公主
+2026-08-17 11:49:08 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269836.html
+2026-08-17 11:49:08 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269836.html HTTP/1.1" 200 None
+2026-08-17 11:49:08 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第041章 皇帝轮流做.txt
+2026-08-17 11:49:08 | DEBUG    | core.processmanager | 已保存章节 41/136：第41章 皇帝轮流做
+2026-08-17 11:49:08 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269837.html
+2026-08-17 11:49:09 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269837.html HTTP/1.1" 200 None
+2026-08-17 11:49:09 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第042章 新皇上任三把火.txt
+2026-08-17 11:49:09 | DEBUG    | core.processmanager | 已保存章节 42/136：第42章 新皇上任三把火
+2026-08-17 11:49:09 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269838.html
+2026-08-17 11:49:10 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269838.html HTTP/1.1" 200 None
+2026-08-17 11:49:10 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第043章 继承人.txt
+2026-08-17 11:49:10 | DEBUG    | core.processmanager | 已保存章节 43/136：第43章 继承人
+2026-08-17 11:49:10 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269839.html
+2026-08-17 11:49:10 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269839.html HTTP/1.1" 200 None
+2026-08-17 11:49:10 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第044章 皇帝疯了.txt
+2026-08-17 11:49:10 | DEBUG    | core.processmanager | 已保存章节 44/136：第44章 皇帝疯了
+2026-08-17 11:49:10 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269840.html
+2026-08-17 11:49:11 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269840.html HTTP/1.1" 200 None
+2026-08-17 11:49:11 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第045章 青山依旧在，故人何处寻.txt
+2026-08-17 11:49:11 | DEBUG    | core.processmanager | 已保存章节 45/136：第45章 青山依旧在，故人何处寻
+2026-08-17 11:49:11 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269841.html
+2026-08-17 11:49:11 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269841.html HTTP/1.1" 200 None
+2026-08-17 11:49:11 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第046章 真相.txt
+2026-08-17 11:49:11 | DEBUG    | core.processmanager | 已保存章节 46/136：第46章 真相
+2026-08-17 11:49:11 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269842.html
+2026-08-17 11:49:12 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269842.html HTTP/1.1" 200 None
+2026-08-17 11:49:12 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第047章 传承.txt
+2026-08-17 11:49:12 | DEBUG    | core.processmanager | 已保存章节 47/136：第47章 传承
+2026-08-17 11:49:12 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269843.html
+2026-08-17 11:49:13 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269843.html HTTP/1.1" 200 None
+2026-08-17 11:49:13 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第048章 传承开启.txt
+2026-08-17 11:49:13 | DEBUG    | core.processmanager | 已保存章节 48/136：第48章 传承开启
+2026-08-17 11:49:13 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269845.html
+2026-08-17 11:49:13 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269845.html HTTP/1.1" 200 None
+2026-08-17 11:49:13 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第049章 大自在.txt
+2026-08-17 11:49:13 | DEBUG    | core.processmanager | 已保存章节 49/136：第49章 大自在
+2026-08-17 11:49:13 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269846.html
+2026-08-17 11:49:14 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269846.html HTTP/1.1" 200 None
+2026-08-17 11:49:14 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第050章 牢笼.txt
+2026-08-17 11:49:14 | DEBUG    | core.processmanager | 已保存章节 50/136：第50章 牢笼
+2026-08-17 11:49:14 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269848.html
+2026-08-17 11:49:15 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269848.html HTTP/1.1" 200 None
+2026-08-17 11:49:15 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第051章 巡查使.txt
+2026-08-17 11:49:15 | DEBUG    | core.processmanager | 已保存章节 51/136：第51章 巡查使
+2026-08-17 11:49:15 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269850.html
+2026-08-17 11:49:15 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269850.html HTTP/1.1" 200 None
+2026-08-17 11:49:15 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第052章 并入.txt
+2026-08-17 11:49:15 | DEBUG    | core.processmanager | 已保存章节 52/136：第52章 并入
+2026-08-17 11:49:15 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269851.html
+2026-08-17 11:49:15 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269851.html HTTP/1.1" 200 None
+2026-08-17 11:49:16 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第053章 冲突.txt
+2026-08-17 11:49:16 | DEBUG    | core.processmanager | 已保存章节 53/136：第53章 冲突
+2026-08-17 11:49:16 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269852.html
+2026-08-17 11:49:16 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269852.html HTTP/1.1" 200 None
+2026-08-17 11:49:16 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第054章 新方案.txt
+2026-08-17 11:49:16 | DEBUG    | core.processmanager | 已保存章节 54/136：第54章 新方案
+2026-08-17 11:49:16 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269853.html
+2026-08-17 11:49:17 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269853.html HTTP/1.1" 200 None
+2026-08-17 11:49:17 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第055章 我到现在还没有出手呢.txt
+2026-08-17 11:49:17 | DEBUG    | core.processmanager | 已保存章节 55/136：第55章 我到现在还没有出手呢
+2026-08-17 11:49:17 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269854.html
+2026-08-17 11:49:17 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269854.html HTTP/1.1" 200 None
+2026-08-17 11:49:17 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第056章 秘密武器.txt
+2026-08-17 11:49:17 | DEBUG    | core.processmanager | 已保存章节 56/136：第56章 秘密武器
+2026-08-17 11:49:17 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269855.html
+2026-08-17 11:49:18 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269855.html HTTP/1.1" 200 None
+2026-08-17 11:49:18 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第057章 双方意见统一.txt
+2026-08-17 11:49:18 | DEBUG    | core.processmanager | 已保存章节 57/136：第57章 双方意见统一
+2026-08-17 11:49:18 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269856.html
+2026-08-17 11:49:19 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269856.html HTTP/1.1" 200 None
+2026-08-17 11:49:19 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第058章 外面的世界.txt
+2026-08-17 11:49:19 | DEBUG    | core.processmanager | 已保存章节 58/136：第58章 外面的世界
+2026-08-17 11:49:19 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269857.html
+2026-08-17 11:49:19 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269857.html HTTP/1.1" 200 None
+2026-08-17 11:49:19 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第059章 悲伤.txt
+2026-08-17 11:49:19 | DEBUG    | core.processmanager | 已保存章节 59/136：第59章 悲伤
+2026-08-17 11:49:19 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269859.html
+2026-08-17 11:49:19 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269859.html HTTP/1.1" 200 None
+2026-08-17 11:49:19 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第060章 一盏明灯.txt
+2026-08-17 11:49:19 | DEBUG    | core.processmanager | 已保存章节 60/136：第60章 一盏明灯
+2026-08-17 11:49:19 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269860.html
+2026-08-17 11:49:20 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269860.html HTTP/1.1" 200 None
+2026-08-17 11:49:20 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第061章 遁天.txt
+2026-08-17 11:49:20 | DEBUG    | core.processmanager | 已保存章节 61/136：第61章 遁天
+2026-08-17 11:49:20 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269862.html
+2026-08-17 11:49:21 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269862.html HTTP/1.1" 200 None
+2026-08-17 11:49:21 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第062章 二维世界.txt
+2026-08-17 11:49:21 | DEBUG    | core.processmanager | 已保存章节 62/136：第62章 二维世界
+2026-08-17 11:49:21 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269863.html
+2026-08-17 11:49:21 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269863.html HTTP/1.1" 200 None
+2026-08-17 11:49:21 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第063章 新生国.txt
+2026-08-17 11:49:21 | DEBUG    | core.processmanager | 已保存章节 63/136：第63章 新生国
+2026-08-17 11:49:21 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269864.html
+2026-08-17 11:49:22 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269864.html HTTP/1.1" 200 None
+2026-08-17 11:49:22 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第064章 二维战争.txt
+2026-08-17 11:49:22 | DEBUG    | core.processmanager | 已保存章节 64/136：第64章 二维战争
+2026-08-17 11:49:22 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269865.html
+2026-08-17 11:49:22 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269865.html HTTP/1.1" 200 None
+2026-08-17 11:49:22 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第065章 你怎么还没死？.txt
+2026-08-17 11:49:22 | DEBUG    | core.processmanager | 已保存章节 65/136：第65章 你怎么还没死？
+2026-08-17 11:49:22 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269866.html
+2026-08-17 11:49:22 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269866.html HTTP/1.1" 200 None
+2026-08-17 11:49:22 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第066章 探索.txt
+2026-08-17 11:49:22 | DEBUG    | core.processmanager | 已保存章节 66/136：第66章 探索
+2026-08-17 11:49:22 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269867.html
+2026-08-17 11:49:23 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269867.html HTTP/1.1" 200 None
+2026-08-17 11:49:23 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第067章 神殿.txt
+2026-08-17 11:49:23 | DEBUG    | core.processmanager | 已保存章节 67/136：第67章 神殿
+2026-08-17 11:49:23 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269868.html
+2026-08-17 11:49:23 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269868.html HTTP/1.1" 200 None
+2026-08-17 11:49:23 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第068章 水滴.txt
+2026-08-17 11:49:23 | DEBUG    | core.processmanager | 已保存章节 68/136：第68章 水滴
+2026-08-17 11:49:23 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269869.html
+2026-08-17 11:49:24 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269869.html HTTP/1.1" 200 None
+2026-08-17 11:49:24 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第069章 离开.txt
+2026-08-17 11:49:24 | DEBUG    | core.processmanager | 已保存章节 69/136：第69章 离开
+2026-08-17 11:49:24 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269870.html
+2026-08-17 11:49:25 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269870.html HTTP/1.1" 200 None
+2026-08-17 11:49:25 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第070章 真正离开.txt
+2026-08-17 11:49:25 | DEBUG    | core.processmanager | 已保存章节 70/136：第70章 真正离开
+2026-08-17 11:49:25 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269871.html
+2026-08-17 11:49:25 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269871.html HTTP/1.1" 200 None
+2026-08-17 11:49:25 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第071章 根骨.txt
+2026-08-17 11:49:25 | DEBUG    | core.processmanager | 已保存章节 71/136：第71章 根骨
+2026-08-17 11:49:25 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269872.html
+2026-08-17 11:49:26 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269872.html HTTP/1.1" 200 None
+2026-08-17 11:49:26 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第072章 疯天帝.txt
+2026-08-17 11:49:26 | DEBUG    | core.processmanager | 已保存章节 72/136：第72章 疯天帝
+2026-08-17 11:49:26 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269873.html
+2026-08-17 11:49:26 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269873.html HTTP/1.1" 200 None
+2026-08-17 11:49:26 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第073章 逃逃逃.txt
+2026-08-17 11:49:26 | DEBUG    | core.processmanager | 已保存章节 73/136：第73章 逃逃逃
+2026-08-17 11:49:26 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269875.html
+2026-08-17 11:49:27 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269875.html HTTP/1.1" 200 None
+2026-08-17 11:49:27 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第074章 吞天罐.txt
+2026-08-17 11:49:27 | DEBUG    | core.processmanager | 已保存章节 74/136：第74章 吞天罐
+2026-08-17 11:49:27 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269877.html
+2026-08-17 11:49:27 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269877.html HTTP/1.1" 200 None
+2026-08-17 11:49:27 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第075章 流浆.txt
+2026-08-17 11:49:27 | DEBUG    | core.processmanager | 已保存章节 75/136：第75章 流浆
+2026-08-17 11:49:27 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269878.html
+2026-08-17 11:49:27 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269878.html HTTP/1.1" 200 None
+2026-08-17 11:49:27 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第076章 疯狂吸收.txt
+2026-08-17 11:49:27 | DEBUG    | core.processmanager | 已保存章节 76/136：第76章 疯狂吸收
+2026-08-17 11:49:27 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269880.html
+2026-08-17 11:49:28 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269880.html HTTP/1.1" 200 None
+2026-08-17 11:49:28 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第077章 足踏乾坤碎.txt
+2026-08-17 11:49:28 | DEBUG    | core.processmanager | 已保存章节 77/136：第77章 足踏乾坤碎
+2026-08-17 11:49:28 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269881.html
+2026-08-17 11:49:28 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269881.html HTTP/1.1" 200 None
+2026-08-17 11:49:28 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第078章 树船.txt
+2026-08-17 11:49:28 | DEBUG    | core.processmanager | 已保存章节 78/136：第78章 树船
+2026-08-17 11:49:28 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269882.html
+2026-08-17 11:49:29 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269882.html HTTP/1.1" 200 None
+2026-08-17 11:49:29 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第079章 菊花怪物.txt
+2026-08-17 11:49:29 | DEBUG    | core.processmanager | 已保存章节 79/136：第79章 菊花怪物
+2026-08-17 11:49:29 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269883.html
+2026-08-17 11:49:29 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269883.html HTTP/1.1" 200 None
+2026-08-17 11:49:29 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第080章 斧头.txt
+2026-08-17 11:49:29 | DEBUG    | core.processmanager | 已保存章节 80/136：第80章 斧头
+2026-08-17 11:49:29 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269884.html
+2026-08-17 11:49:30 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269884.html HTTP/1.1" 200 None
+2026-08-17 11:49:30 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第081章 你不属于这个世界.txt
+2026-08-17 11:49:30 | DEBUG    | core.processmanager | 已保存章节 81/136：第81章 你不属于这个世界
+2026-08-17 11:49:30 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269885.html
+2026-08-17 11:49:30 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269885.html HTTP/1.1" 200 None
+2026-08-17 11:49:30 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第082章 星空古矿.txt
+2026-08-17 11:49:30 | DEBUG    | core.processmanager | 已保存章节 82/136：第82章 星空古矿
+2026-08-17 11:49:30 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269886.html
+2026-08-17 11:49:31 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269886.html HTTP/1.1" 200 None
+2026-08-17 11:49:31 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第083章 领袖.txt
+2026-08-17 11:49:31 | DEBUG    | core.processmanager | 已保存章节 83/136：第83章 领袖
+2026-08-17 11:49:31 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269887.html
+2026-08-17 11:49:31 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269887.html HTTP/1.1" 200 None
+2026-08-17 11:49:31 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第084章 莫加.txt
+2026-08-17 11:49:31 | DEBUG    | core.processmanager | 已保存章节 84/136：第84章 莫加
+2026-08-17 11:49:31 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269888.html
+2026-08-17 11:49:32 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269888.html HTTP/1.1" 200 None
+2026-08-17 11:49:32 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第085章 命运的安排.txt
+2026-08-17 11:49:32 | DEBUG    | core.processmanager | 已保存章节 85/136：第85章 命运的安排
+2026-08-17 11:49:32 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269890.html
+2026-08-17 11:49:32 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269890.html HTTP/1.1" 200 None
+2026-08-17 11:49:32 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第086章 莫家牢笼.txt
+2026-08-17 11:49:32 | DEBUG    | core.processmanager | 已保存章节 86/136：第86章 莫家牢笼
+2026-08-17 11:49:32 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269891.html
+2026-08-17 11:49:33 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269891.html HTTP/1.1" 200 None
+2026-08-17 11:49:33 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第087章 原来你也是个吃货.txt
+2026-08-17 11:49:33 | DEBUG    | core.processmanager | 已保存章节 87/136：第87章 原来你也是个吃货
+2026-08-17 11:49:33 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269893.html
+2026-08-17 11:49:33 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269893.html HTTP/1.1" 200 None
+2026-08-17 11:49:33 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第088章 自由.txt
+2026-08-17 11:49:33 | DEBUG    | core.processmanager | 已保存章节 88/136：第88章 自由
+2026-08-17 11:49:33 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269894.html
+2026-08-17 11:49:34 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269894.html HTTP/1.1" 200 None
+2026-08-17 11:49:34 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第089章 乌坦.txt
+2026-08-17 11:49:34 | DEBUG    | core.processmanager | 已保存章节 89/136：第89章 乌坦
+2026-08-17 11:49:34 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269895.html
+2026-08-17 11:49:35 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269895.html HTTP/1.1" 200 None
+2026-08-17 11:49:35 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第090章 宝藏之地.txt
+2026-08-17 11:49:35 | DEBUG    | core.processmanager | 已保存章节 90/136：第90章 宝藏之地
+2026-08-17 11:49:35 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269896.html
+2026-08-17 11:49:36 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269896.html HTTP/1.1" 200 None
+2026-08-17 11:49:36 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第091章 跟我，走.txt
+2026-08-17 11:49:36 | DEBUG    | core.processmanager | 已保存章节 91/136：第91章 跟我，走
+2026-08-17 11:49:36 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269897.html
+2026-08-17 11:49:36 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269897.html HTTP/1.1" 200 None
+2026-08-17 11:49:36 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第092章 不可战胜的力量.txt
+2026-08-17 11:49:36 | DEBUG    | core.processmanager | 已保存章节 92/136：第92章 不可战胜的力量
+2026-08-17 11:49:36 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269898.html
+2026-08-17 11:49:37 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269898.html HTTP/1.1" 200 None
+2026-08-17 11:49:37 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第093章 这就是星空古矿的真相.txt
+2026-08-17 11:49:37 | DEBUG    | core.processmanager | 已保存章节 93/136：第93章 这就是星空古矿的真相
+2026-08-17 11:49:37 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269899.html
+2026-08-17 11:49:37 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269899.html HTTP/1.1" 200 None
+2026-08-17 11:49:37 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第094章 以吾之名，与汝结盟.txt
+2026-08-17 11:49:37 | DEBUG    | core.processmanager | 已保存章节 94/136：第94章 以吾之名，与汝结盟
+2026-08-17 11:49:37 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269900.html
+2026-08-17 11:49:38 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269900.html HTTP/1.1" 200 None
+2026-08-17 11:49:38 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第095章 回溯.txt
+2026-08-17 11:49:38 | DEBUG    | core.processmanager | 已保存章节 95/136：第95章 回溯
+2026-08-17 11:49:38 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269901.html
+2026-08-17 11:49:38 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269901.html HTTP/1.1" 200 None
+2026-08-17 11:49:38 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第096章 护卫队.txt
+2026-08-17 11:49:38 | DEBUG    | core.processmanager | 已保存章节 96/136：第96章 护卫队
+2026-08-17 11:49:38 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269902.html
+2026-08-17 11:49:39 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269902.html HTTP/1.1" 200 None
+2026-08-17 11:49:39 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第097章 出去.txt
+2026-08-17 11:49:39 | DEBUG    | core.processmanager | 已保存章节 97/136：第97章 出去
+2026-08-17 11:49:39 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269903.html
+2026-08-17 11:49:39 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269903.html HTTP/1.1" 200 None
+2026-08-17 11:49:39 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第098章 各方际遇.txt
+2026-08-17 11:49:39 | DEBUG    | core.processmanager | 已保存章节 98/136：第98章 各方际遇
+2026-08-17 11:49:39 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269904.html
+2026-08-17 11:49:39 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269904.html HTTP/1.1" 200 None
+2026-08-17 11:49:39 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第099章 协作.txt
+2026-08-17 11:49:39 | DEBUG    | core.processmanager | 已保存章节 99/136：第99章 协作
+2026-08-17 11:49:39 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269905.html
+2026-08-17 11:49:40 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269905.html HTTP/1.1" 200 None
+2026-08-17 11:49:40 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第100章 好戏要开场了.txt
+2026-08-17 11:49:40 | DEBUG    | core.processmanager | 已保存章节 100/136：第100章 好戏要开场了
+2026-08-17 11:49:40 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269906.html
+2026-08-17 11:49:40 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269906.html HTTP/1.1" 200 None
+2026-08-17 11:49:40 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第101章 说服.txt
+2026-08-17 11:49:40 | DEBUG    | core.processmanager | 已保存章节 101/136：第101章 说服
+2026-08-17 11:49:40 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269907.html
+2026-08-17 11:49:41 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269907.html HTTP/1.1" 200 None
+2026-08-17 11:49:41 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第102章 宴会.txt
+2026-08-17 11:49:41 | DEBUG    | core.processmanager | 已保存章节 102/136：第102章 宴会
+2026-08-17 11:49:41 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269908.html
+2026-08-17 11:49:41 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269908.html HTTP/1.1" 200 None
+2026-08-17 11:49:41 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第103章 声音.txt
+2026-08-17 11:49:41 | DEBUG    | core.processmanager | 已保存章节 103/136：第103章 声音
+2026-08-17 11:49:41 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269909.html
+2026-08-17 11:49:42 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269909.html HTTP/1.1" 200 None
+2026-08-17 11:49:42 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第104章 无面人.txt
+2026-08-17 11:49:42 | DEBUG    | core.processmanager | 已保存章节 104/136：第104章 无面人
+2026-08-17 11:49:42 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269910.html
+2026-08-17 11:49:43 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269910.html HTTP/1.1" 200 None
+2026-08-17 11:49:43 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第105章 请告诉我如何帮助你.txt
+2026-08-17 11:49:43 | DEBUG    | core.processmanager | 已保存章节 105/136：第105章 请告诉我如何帮助你
+2026-08-17 11:49:43 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269911.html
+2026-08-17 11:49:43 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269911.html HTTP/1.1" 200 None
+2026-08-17 11:49:43 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第106章 请君入瓮.txt
+2026-08-17 11:49:43 | DEBUG    | core.processmanager | 已保存章节 106/136：第106章 请君入瓮
+2026-08-17 11:49:43 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269912.html
+2026-08-17 11:49:44 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269912.html HTTP/1.1" 200 None
+2026-08-17 11:49:44 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第107章 莫加的计划.txt
+2026-08-17 11:49:44 | DEBUG    | core.processmanager | 已保存章节 107/136：第107章 莫加的计划
+2026-08-17 11:49:44 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269913.html
+2026-08-17 11:49:44 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269913.html HTTP/1.1" 200 None
+2026-08-17 11:49:44 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第108章 出不去.txt
+2026-08-17 11:49:44 | DEBUG    | core.processmanager | 已保存章节 108/136：第108章 出不去
+2026-08-17 11:49:44 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269915.html
+2026-08-17 11:49:44 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269915.html HTTP/1.1" 200 None
+2026-08-17 11:49:44 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第109章 逆转.txt
+2026-08-17 11:49:44 | DEBUG    | core.processmanager | 已保存章节 109/136：第109章 逆转
+2026-08-17 11:49:44 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269917.html
+2026-08-17 11:49:45 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269917.html HTTP/1.1" 200 None
+2026-08-17 11:49:45 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第110章 奇遇.txt
+2026-08-17 11:49:45 | DEBUG    | core.processmanager | 已保存章节 110/136：第110章 奇遇
+2026-08-17 11:49:45 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269919.html
+2026-08-17 11:49:45 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269919.html HTTP/1.1" 200 None
+2026-08-17 11:49:45 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第111章 出口.txt
+2026-08-17 11:49:45 | DEBUG    | core.processmanager | 已保存章节 111/136：第111章 出口
+2026-08-17 11:49:45 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269920.html
+2026-08-17 11:49:46 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269920.html HTTP/1.1" 200 None
+2026-08-17 11:49:46 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第112章 争斗.txt
+2026-08-17 11:49:46 | DEBUG    | core.processmanager | 已保存章节 112/136：第112章 争斗
+2026-08-17 11:49:46 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269921.html
+2026-08-17 11:49:46 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269921.html HTTP/1.1" 200 None
+2026-08-17 11:49:46 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第113章 涅盘重生.txt
+2026-08-17 11:49:46 | DEBUG    | core.processmanager | 已保存章节 113/136：第113章 涅盘重生
+2026-08-17 11:49:46 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269922.html
+2026-08-17 11:49:46 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269922.html HTTP/1.1" 200 None
+2026-08-17 11:49:46 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第114章 终战（上）.txt
+2026-08-17 11:49:46 | DEBUG    | core.processmanager | 已保存章节 114/136：第114章 终战（上）
+2026-08-17 11:49:46 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269923.html
+2026-08-17 11:49:47 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269923.html HTTP/1.1" 200 None
+2026-08-17 11:49:47 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第115章 终战（下）.txt
+2026-08-17 11:49:47 | DEBUG    | core.processmanager | 已保存章节 115/136：第115章 终战（下）
+2026-08-17 11:49:47 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269924.html
+2026-08-17 11:49:47 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269924.html HTTP/1.1" 200 None
+2026-08-17 11:49:47 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第116章 十年.txt
+2026-08-17 11:49:47 | DEBUG    | core.processmanager | 已保存章节 116/136：第116章 十年
+2026-08-17 11:49:47 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269925.html
+2026-08-17 11:49:48 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269925.html HTTP/1.1" 200 None
+2026-08-17 11:49:48 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第117章 太空城.txt
+2026-08-17 11:49:48 | DEBUG    | core.processmanager | 已保存章节 117/136：第117章 太空城
+2026-08-17 11:49:48 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269926.html
+2026-08-17 11:49:48 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269926.html HTTP/1.1" 200 None
+2026-08-17 11:49:48 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第118章 扣留.txt
+2026-08-17 11:49:48 | DEBUG    | core.processmanager | 已保存章节 118/136：第118章 扣留
+2026-08-17 11:49:48 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269927.html
+2026-08-17 11:49:49 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269927.html HTTP/1.1" 200 None
+2026-08-17 11:49:49 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第119章 袭击.txt
+2026-08-17 11:49:49 | DEBUG    | core.processmanager | 已保存章节 119/136：第119章 袭击
+2026-08-17 11:49:49 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269929.html
+2026-08-17 11:49:49 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269929.html HTTP/1.1" 200 None
+2026-08-17 11:49:49 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第120章 时之花.txt
+2026-08-17 11:49:49 | DEBUG    | core.processmanager | 已保存章节 120/136：第120章 时之花
+2026-08-17 11:49:49 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269931.html
+2026-08-17 11:49:50 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269931.html HTTP/1.1" 200 None
+2026-08-17 11:49:50 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第121章 空间折叠迷宫.txt
+2026-08-17 11:49:50 | DEBUG    | core.processmanager | 已保存章节 121/136：第121章 空间折叠迷宫
+2026-08-17 11:49:50 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269933.html
+2026-08-17 11:49:51 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269933.html HTTP/1.1" 200 None
+2026-08-17 11:49:51 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第122章 独眼尊者死.txt
+2026-08-17 11:49:51 | DEBUG    | core.processmanager | 已保存章节 122/136：第122章 独眼尊者死
+2026-08-17 11:49:51 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269934.html
+2026-08-17 11:49:51 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269934.html HTTP/1.1" 200 None
+2026-08-17 11:49:51 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第123章 被宇君追捕.txt
+2026-08-17 11:49:51 | DEBUG    | core.processmanager | 已保存章节 123/136：第123章 被宇君追捕
+2026-08-17 11:49:51 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269935.html
+2026-08-17 11:49:51 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269935.html HTTP/1.1" 200 None
+2026-08-17 11:49:51 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第124章 欢迎来到娱乐城.txt
+2026-08-17 11:49:51 | DEBUG    | core.processmanager | 已保存章节 124/136：第124章 欢迎来到娱乐城
+2026-08-17 11:49:51 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269936.html
+2026-08-17 11:49:52 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269936.html HTTP/1.1" 200 None
+2026-08-17 11:49:52 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第125章 情报.txt
+2026-08-17 11:49:52 | DEBUG    | core.processmanager | 已保存章节 125/136：第125章 情报
+2026-08-17 11:49:52 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269937.html
+2026-08-17 11:49:52 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269937.html HTTP/1.1" 200 None
+2026-08-17 11:49:52 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第126章 思维扭扭蛋.txt
+2026-08-17 11:49:52 | DEBUG    | core.processmanager | 已保存章节 126/136：第126章 思维扭扭蛋
+2026-08-17 11:49:52 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269938.html
+2026-08-17 11:49:53 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269938.html HTTP/1.1" 200 None
+2026-08-17 11:49:53 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第127章 唯我独尊.txt
+2026-08-17 11:49:53 | DEBUG    | core.processmanager | 已保存章节 127/136：第127章 唯我独尊
+2026-08-17 11:49:53 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269939.html
+2026-08-17 11:49:54 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269939.html HTTP/1.1" 200 None
+2026-08-17 11:49:54 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第128章 记忆迷宫.txt
+2026-08-17 11:49:54 | DEBUG    | core.processmanager | 已保存章节 128/136：第128章 记忆迷宫
+2026-08-17 11:49:54 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269940.html
+2026-08-17 11:49:55 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269940.html HTTP/1.1" 200 None
+2026-08-17 11:49:55 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第129章 记忆拼图.txt
+2026-08-17 11:49:55 | DEBUG    | core.processmanager | 已保存章节 129/136：第129章 记忆拼图
+2026-08-17 11:49:55 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269941.html
+2026-08-17 11:49:55 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269941.html HTTP/1.1" 200 None
+2026-08-17 11:49:55 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第130章 小偷.txt
+2026-08-17 11:49:55 | DEBUG    | core.processmanager | 已保存章节 130/136：第130章 小偷
+2026-08-17 11:49:55 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131269942.html
+2026-08-17 11:49:56 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131269942.html HTTP/1.1" 200 None
+2026-08-17 11:49:56 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第131章 孤独和未知.txt
+2026-08-17 11:49:56 | DEBUG    | core.processmanager | 已保存章节 131/136：第131章 孤独和未知
+2026-08-17 11:49:56 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/131563071.html
+2026-08-17 11:49:56 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/131563071.html HTTP/1.1" 200 None
+2026-08-17 11:49:56 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第132章 欲生欲死.txt
+2026-08-17 11:49:56 | DEBUG    | core.processmanager | 已保存章节 132/136：第132章 欲生欲死
+2026-08-17 11:49:56 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/132048564.html
+2026-08-17 11:49:57 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/132048564.html HTTP/1.1" 200 None
+2026-08-17 11:49:57 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第133章 味觉碰碰车.txt
+2026-08-17 11:49:57 | DEBUG    | core.processmanager | 已保存章节 133/136：第133章 味觉碰碰车
+2026-08-17 11:49:57 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/132213333.html
+2026-08-17 11:49:57 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/132213333.html HTTP/1.1" 200 None
+2026-08-17 11:49:57 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第134章 白司鹿.txt
+2026-08-17 11:49:57 | DEBUG    | core.processmanager | 已保存章节 134/136：第134章 白司鹿
+2026-08-17 11:49:57 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/132714368.html
+2026-08-17 11:49:58 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/132714368.html HTTP/1.1" 200 None
+2026-08-17 11:49:58 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第135章 狂笑实验室.txt
+2026-08-17 11:49:58 | DEBUG    | core.processmanager | 已保存章节 135/136：第135章 狂笑实验室
+2026-08-17 11:49:58 | DEBUG    | sites.parser | 请求正文页：https://m.shuhaige.net/382360/133346034.html
+2026-08-17 11:49:58 | DEBUG    | urllib3.connectionpool | https://m.shuhaige.net:443 "GET /382360/133346034.html HTTP/1.1" 200 None
+2026-08-17 11:49:58 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第136章 追击.txt
+2026-08-17 11:49:58 | DEBUG    | core.processmanager | 已保存章节 136/136：第136章 追击
+2026-08-17 11:49:58 | INFO     | core.processmanager | 《从斩神开始，我的分身遍布全宇宙》下载完成

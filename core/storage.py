@@ -18,7 +18,7 @@ class Storage():
         save_title_name = safe_filename(title_name)
         if entry_type == "single_article":
             filename = f"{save_title_name}.txt"
-        if entry_type == "article_list":
+        elif entry_type == "article_list":
             filename = f"{save_title_name}.txt"
         else:
             filename = f"第{chapter_no:03d}章 {save_title_name}.txt"
