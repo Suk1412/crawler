@@ -8,6 +8,8 @@ book:
 
 catalog:
   title_selector: "h2.title"
+  # chapter_files 为默认的逐章 TXT；single_file 将整本书合并为一个 TXT。
+  save_mode: single_file
   page_mode: all_links
   page_selector: "select option"
   page_url_attr: "value"
@@ -19,3 +21,14 @@ catalog:
 content:
   title_selector: "h1.headline"
   paragraph_selector: "div.content p"
+  # 本站一章会拆成多页；按文字筛选，避免把“下一章”误当正文下一页。
+  page_mode: next_link
+  next_page_selector: "div.pager a"
+  next_page_text: "下一页"
+  next_page_url_attr: href
+  max_pages: 100
+  # 可添加多条正则，清除正文中的推广、提示等非文章文字；匹配后为空的段落会丢弃。
+  remove_text_patterns:
+    - "如果此书侵犯了您的权益，请点击访问作者版权投诉快速通道"
+    - "本小章还未完~.~，请点击下一页继续阅读后面精彩内容！"
+    - '^喜欢.*?请大家收藏：\(35xss\.net\).*?闪舞小说网更新速度全网最快。?$'

@@ -18,6 +18,10 @@ class ProcessManager(object):
         """长篇小说下载器"""
         book_name = self.parser.get_book_name(self.entry_url)
         chapters = self.parser.get_chapter_list(self.entry_url)
+        save_mode = self.parser.config.get("catalog", {}).get("save_mode", "chapter_files")
+        if save_mode not in {"chapter_files", "single_file"}:
+            logger.warning("未知的目录保存模式 %s，将按分章文件保存", save_mode)
+            save_mode = "chapter_files"
         total_chapters = len(chapters)
         if not total_chapters:
             logger.warning("未找到可下载章节：%s", self.entry_url)
@@ -28,13 +32,20 @@ class ProcessManager(object):
         try:
             for completed, (chapter_no, (chapter_title, chapter_url)) in enumerate(chapters.items(), start=1):
                 _, content = self.parser.get_chapter_content(chapter_url)
-                self.storage.save(
-                    book_name=book_name,
-                    chapter_no=chapter_no,
-                    chapter_title=chapter_title,
-                    content=content,
-                    entry_type=entry_type,
-                )
+                if save_mode == "single_file":
+                    self.storage.save_combined_catalog_chapter(
+                        book_name=book_name,
+                        content=content,
+                        overwrite=(completed == 1),
+                    )
+                else:
+                    self.storage.save(
+                        book_name=book_name,
+                        chapter_no=chapter_no,
+                        chapter_title=chapter_title,
+                        content=content,
+                        entry_type=entry_type,
+                    )
                 logger.debug("已保存章节 %s/%s：%s", completed, total_chapters, chapter_title)
                 saved_count = completed
                 self._print_progress(completed, total_chapters, chapter_title)

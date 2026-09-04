@@ -5,6 +5,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from urllib.parse import urljoin
 from pathlib import Path
+import re
 
 logger = logging.getLogger(__name__)
 output_dir = Path(__file__).resolve().parents[1] / "output" / "html"
@@ -50,8 +51,19 @@ class Parser():
         self.chapter_chapter_selector = self.config['catalog']['chapter_selector']
         self.chapter_chapter_title = self.config['catalog']['chapter_title']
         self.chapter_chapter_url_attr = catalog_config.get('chapter_url_attr')
-        self.content_title_selector = self.config['content']['title_selector']
-        self.content_paragraph_selector = self.config['content']['paragraph_selector']
+        content_config = self.config['content']
+        self.content_title_selector = content_config['title_selector']
+        self.content_paragraph_selector = content_config['paragraph_selector']
+        # 正文分页是可选功能。未配置的旧站点仍按单页正文处理。
+        self.content_page_mode = content_config.get('page_mode')
+        self.content_next_page_selector = content_config.get('next_page_selector')
+        self.content_next_page_text = content_config.get('next_page_text')
+        self.content_next_page_url_attr = content_config.get('next_page_url_attr', 'href')
+        self.content_max_pages = content_config.get('max_pages', 100)
+        self.content_remove_text_patterns = [
+            re.compile(pattern)
+            for pattern in content_config.get('remove_text_patterns', [])
+        ]
 
 
     def get_book_name(self, html):
@@ -90,18 +102,57 @@ class Parser():
             
     
     def get_chapter_content(self, html):
-        """解析单个正文页"""
-        logger.debug("请求正文页：%s", html)
-        response = self.session.get(html, timeout=(5, 15))
-        paragraphs = []
-        if response.status_code == 200:
+        """解析单个正文页，并按配置合并其分页内容。"""
+        current_url = html
+        visited = set()
+        title = None
+        paragraph_texts = []
+
+        while current_url and current_url not in visited and len(visited) < self.content_max_pages:
+            visited.add(current_url)
+            logger.debug("请求正文页：%s", current_url)
+            response = self.session.get(current_url, timeout=(5, 15))
+            response.raise_for_status()
             soup = BeautifulSoup(response.text, "html.parser")
-            title_node = soup.select_one(self.content_title_selector)
-            if title_node is None:
-                raise ValueError(f"找不到正文标题：{self.content_title_selector}")
-            title = title_node.get_text(strip=True)
-            paragraphs = soup.select(self.content_paragraph_selector)
-        return title, title + "\n" + "\n".join(p.get_text(strip=True) for p in paragraphs)
+
+            if title is None:
+                title_node = soup.select_one(self.content_title_selector)
+                if title_node is None:
+                    raise ValueError(f"找不到正文标题：{self.content_title_selector}")
+                title = title_node.get_text(strip=True)
+
+            for paragraph in soup.select(self.content_paragraph_selector):
+                text = self._clean_content_text(paragraph.get_text(strip=True))
+                if text:
+                    paragraph_texts.append(text)
+
+            if self.content_page_mode != 'next_link':
+                break
+            current_url = self._get_next_content_page_url(soup, current_url)
+
+        if len(visited) == self.content_max_pages and current_url:
+            logger.warning("正文页达到最大限制 %s，已停止继续翻页", self.content_max_pages)
+        logger.debug("正文解析完成：页数=%s", len(visited))
+        return title, title + "\n" + "\n".join(paragraph_texts)
+
+    def _get_next_content_page_url(self, soup, current_url):
+        """从正文翻页区域取下一页；可用链接文本避免误跟随“下一章”。"""
+        if not self.content_next_page_selector:
+            raise ValueError("正文分页缺少 next_page_selector 配置")
+
+        for node in soup.select(self.content_next_page_selector):
+            if self.content_next_page_text and node.get_text(strip=True) != self.content_next_page_text:
+                continue
+            href = node.get(self.content_next_page_url_attr)
+            if href:
+                return urljoin(current_url, href)
+        return None
+
+    def _clean_content_text(self, text):
+        """按 YAML 中的多个正则规则移除正文里的非文章文字。"""
+        for pattern in self.content_remove_text_patterns:
+            text = pattern.sub('', text)
+        return text.strip()
 
     def download_single_article(self,name,html):
         """单篇文章下载器"""

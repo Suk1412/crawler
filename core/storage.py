@@ -26,6 +26,21 @@ class Storage():
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
         logger.debug("文件已写入：%s", file_path)
+
+    def save_combined_catalog_chapter(self, book_name: str, content: str, overwrite: bool = False):
+        """将目录书籍的一个章节追加到同一个 TXT 文件。"""
+        save_book_name = safe_filename(book_name)
+        book_dir = os.path.join(self.output_dir, save_book_name)
+        os.makedirs(book_dir, exist_ok=True)
+
+        file_path = os.path.join(book_dir, f"{save_book_name}.txt")
+        mode = "w" if overwrite else "a"
+        with open(file_path, mode, encoding="utf-8") as f:
+            if not overwrite:
+                f.write("\n")
+            f.write(content.strip())
+            f.write("\n")
+        logger.debug("章节已合并写入：%s", file_path)
     
 
 if __name__ == "__main__":
