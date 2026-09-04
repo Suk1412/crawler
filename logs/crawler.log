@@ -3076,3 +3076,185 @@
 2026-08-17 11:49:58 | DEBUG    | core.storage | 文件已写入：output/从斩神开始，我的分身遍布全宇宙/第136章 追击.txt
 2026-08-17 11:49:58 | DEBUG    | core.processmanager | 已保存章节 136/136：第136章 追击
 2026-08-17 11:49:58 | INFO     | core.processmanager | 《从斩神开始，我的分身遍布全宇宙》下载完成
+2026-09-04 16:25:04 | DEBUG    | sites.config_loader | 开始匹配配置：domain=m.35xss.net, path=/5908/
+2026-09-04 16:30:22 | DEBUG    | sites.config_loader | 开始匹配配置：domain=m.35xss.net, path=/5908/
+2026-09-04 16:30:22 | INFO     | sites.config_loader | 已加载配置：35xss.yaml（类型=catalog，优先级=0）
+2026-09-04 16:30:22 | INFO     | core.processmanager | 任务类型：catalog
+2026-09-04 16:30:22 | DEBUG    | sites.parser | 请求书籍/文章页：https://m.35xss.net/5908/
+2026-09-04 16:30:22 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): m.35xss.net:443
+2026-09-04 16:30:22 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/ HTTP/1.1" 200 None
+2026-09-04 16:30:22 | DEBUG    | sites.parser | 书籍/文章名：全球游戏化：神级内测玩家
+2026-09-04 16:30:22 | DEBUG    | sites.parser | 目录分页模式：所以页链接
+2026-09-04 16:30:23 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/ HTTP/1.1" 200 None
+2026-09-04 16:30:23 | INFO     | sites.parser | 发现 11 个目录分页链接
+2026-09-04 16:30:23 | INFO     | sites.parser | 开始解析章节列表：目录页数量=11
+2026-09-04 16:30:23 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_1/
+2026-09-04 16:30:23 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_1/ HTTP/1.1" 200 None
+2026-09-04 16:30:23 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_2/
+2026-09-04 16:30:23 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_2/ HTTP/1.1" 200 None
+2026-09-04 16:30:23 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_3/
+2026-09-04 16:30:23 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_3/ HTTP/1.1" 200 None
+2026-09-04 16:30:23 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_4/
+2026-09-04 16:30:24 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_4/ HTTP/1.1" 200 None
+2026-09-04 16:30:24 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_5/
+2026-09-04 16:30:24 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_5/ HTTP/1.1" 200 None
+2026-09-04 16:30:24 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_6/
+2026-09-04 16:30:24 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_6/ HTTP/1.1" 200 None
+2026-09-04 16:30:24 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_7/
+2026-09-04 16:30:24 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_7/ HTTP/1.1" 200 None
+2026-09-04 16:30:24 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_8/
+2026-09-04 16:30:25 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_8/ HTTP/1.1" 200 None
+2026-09-04 16:30:25 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_9/
+2026-09-04 16:30:25 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_9/ HTTP/1.1" 200 None
+2026-09-04 16:30:25 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_10/
+2026-09-04 16:30:25 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_10/ HTTP/1.1" 200 None
+2026-09-04 16:30:25 | DEBUG    | sites.parser | 请求目录页：https://m.35xss.net/5908_11/
+2026-09-04 16:30:25 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908_11/ HTTP/1.1" 200 None
+2026-09-04 16:30:25 | INFO     | sites.parser | 章节列表解析完成：共发现 533 个章节
+2026-09-04 16:30:25 | INFO     | core.processmanager | 开始下载《全球游戏化：神级内测玩家》，共 533 章
+2026-09-04 16:30:25 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579460.html
+2026-09-04 16:30:26 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579460.html HTTP/1.1" 200 None
+2026-09-04 16:30:26 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第001章 游戏运营，正式上线！.txt
+2026-09-04 16:30:26 | DEBUG    | core.processmanager | 已保存章节 1/533：第1章 游戏运营，正式上线！
+2026-09-04 16:30:26 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579463.html
+2026-09-04 16:30:26 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579463.html HTTP/1.1" 200 None
+2026-09-04 16:30:26 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第002章 内测玩家.txt
+2026-09-04 16:30:26 | DEBUG    | core.processmanager | 已保存章节 2/533：第2章 内测玩家
+2026-09-04 16:30:26 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579467.html
+2026-09-04 16:30:26 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579467.html HTTP/1.1" 200 None
+2026-09-04 16:30:26 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第003章 神主打赏.txt
+2026-09-04 16:30:26 | DEBUG    | core.processmanager | 已保存章节 3/533：第3章 神主打赏
+2026-09-04 16:30:26 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579470.html
+2026-09-04 16:30:26 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579470.html HTTP/1.1" 200 None
+2026-09-04 16:30:26 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第004章 不做舔狗.txt
+2026-09-04 16:30:26 | DEBUG    | core.processmanager | 已保存章节 4/533：第4章 不做舔狗
+2026-09-04 16:30:26 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579472.html
+2026-09-04 16:30:27 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579472.html HTTP/1.1" 200 None
+2026-09-04 16:30:27 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第005章 免费抽奖，强力武装.txt
+2026-09-04 16:30:27 | DEBUG    | core.processmanager | 已保存章节 5/533：第5章 免费抽奖，强力武装
+2026-09-04 16:30:27 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579475.html
+2026-09-04 16:30:27 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579475.html HTTP/1.1" 200 None
+2026-09-04 16:30:27 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第006章 百万粉丝女主播.txt
+2026-09-04 16:30:27 | DEBUG    | core.processmanager | 已保存章节 6/533：第6章 百万粉丝女主播
+2026-09-04 16:30:27 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579479.html
+2026-09-04 16:30:27 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579479.html HTTP/1.1" 200 None
+2026-09-04 16:30:27 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第007章 沈校花的好友申请.txt
+2026-09-04 16:30:27 | DEBUG    | core.processmanager | 已保存章节 7/533：第7章 沈校花的好友申请
+2026-09-04 16:30:27 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579481.html
+2026-09-04 16:30:27 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579481.html HTTP/1.1" 200 None
+2026-09-04 16:30:27 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第008章 打人一时爽，一直打人一直爽！.txt
+2026-09-04 16:30:27 | DEBUG    | core.processmanager | 已保存章节 8/533：第8章 打人一时爽，一直打人一直爽！
+2026-09-04 16:30:27 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579484.html
+2026-09-04 16:30:28 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579484.html HTTP/1.1" 200 None
+2026-09-04 16:30:28 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第009章 遭遇清场.txt
+2026-09-04 16:30:28 | DEBUG    | core.processmanager | 已保存章节 9/533：第9章 遭遇清场
+2026-09-04 16:30:28 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579487.html
+2026-09-04 16:30:28 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579487.html HTTP/1.1" 200 None
+2026-09-04 16:30:28 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第010章 力量+1.txt
+2026-09-04 16:30:28 | DEBUG    | core.processmanager | 已保存章节 10/533：第10章 力量+1
+2026-09-04 16:30:28 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579489.html
+2026-09-04 16:30:28 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579489.html HTTP/1.1" 200 None
+2026-09-04 16:30:28 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第011章 猎杀稀有怪.txt
+2026-09-04 16:30:28 | DEBUG    | core.processmanager | 已保存章节 11/533：第11章 猎杀稀有怪
+2026-09-04 16:30:28 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579493.html
+2026-09-04 16:30:28 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579493.html HTTP/1.1" 200 None
+2026-09-04 16:30:28 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第012章 幸运团宠！.txt
+2026-09-04 16:30:28 | DEBUG    | core.processmanager | 已保存章节 12/533：第12章 幸运团宠！
+2026-09-04 16:30:28 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579495.html
+2026-09-04 16:30:29 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579495.html HTTP/1.1" 200 None
+2026-09-04 16:30:29 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第013章 大圣哥威武.txt
+2026-09-04 16:30:29 | DEBUG    | core.processmanager | 已保存章节 13/533：第13章 大圣哥威武
+2026-09-04 16:30:29 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579499.html
+2026-09-04 16:30:29 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579499.html HTTP/1.1" 200 None
+2026-09-04 16:30:29 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第014章 孙哥，你有女朋友吗？.txt
+2026-09-04 16:30:29 | DEBUG    | core.processmanager | 已保存章节 14/533：第14章 孙哥，你有女朋友吗？
+2026-09-04 16:30:29 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579503.html
+2026-09-04 16:30:29 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579503.html HTTP/1.1" 200 None
+2026-09-04 16:30:29 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第015章 招揽.txt
+2026-09-04 16:30:29 | DEBUG    | core.processmanager | 已保存章节 15/533：第15章 招揽
+2026-09-04 16:30:29 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579507.html
+2026-09-04 16:30:29 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579507.html HTTP/1.1" 200 None
+2026-09-04 16:30:29 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第016章 校园PK，孙缘天秀！.txt
+2026-09-04 16:30:29 | DEBUG    | core.processmanager | 已保存章节 16/533：第16章 校园PK，孙缘天秀！
+2026-09-04 16:30:29 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579510.html
+2026-09-04 16:30:30 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579510.html HTTP/1.1" 200 None
+2026-09-04 16:30:30 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第017章 外卖真香.txt
+2026-09-04 16:30:30 | DEBUG    | core.processmanager | 已保存章节 17/533：第17章 外卖真香
+2026-09-04 16:30:30 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579513.html
+2026-09-04 16:30:30 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579513.html HTTP/1.1" 200 None
+2026-09-04 16:30:30 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第018章 孙•土豪•缘.txt
+2026-09-04 16:30:30 | DEBUG    | core.processmanager | 已保存章节 18/533：第18章 孙•土豪•缘
+2026-09-04 16:30:30 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579517.html
+2026-09-04 16:30:30 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579517.html HTTP/1.1" 200 None
+2026-09-04 16:30:30 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第019章 神之塔，新人玩家集结.txt
+2026-09-04 16:30:30 | DEBUG    | core.processmanager | 已保存章节 19/533：第19章 神之塔，新人玩家集结
+2026-09-04 16:30:30 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579521.html
+2026-09-04 16:30:30 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579521.html HTTP/1.1" 200 None
+2026-09-04 16:30:30 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第020章 游戏开始！.txt
+2026-09-04 16:30:30 | DEBUG    | core.processmanager | 已保存章节 20/533：第20章 游戏开始！
+2026-09-04 16:30:30 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579525.html
+2026-09-04 16:30:31 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579525.html HTTP/1.1" 200 None
+2026-09-04 16:30:31 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第021章 采蘑菇的小红帽.txt
+2026-09-04 16:30:31 | DEBUG    | core.processmanager | 已保存章节 21/533：第21章 采蘑菇的小红帽
+2026-09-04 16:30:31 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579528.html
+2026-09-04 16:30:31 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579528.html HTTP/1.1" 200 None
+2026-09-04 16:30:31 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第022章 第一波减员.txt
+2026-09-04 16:30:31 | DEBUG    | core.processmanager | 已保存章节 22/533：第22章 第一波减员
+2026-09-04 16:30:31 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579532.html
+2026-09-04 16:30:31 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579532.html HTTP/1.1" 200 None
+2026-09-04 16:30:31 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第023章 内测玩家，秀的一匹！.txt
+2026-09-04 16:30:31 | DEBUG    | core.processmanager | 已保存章节 23/533：第23章 内测玩家，秀的一匹！
+2026-09-04 16:30:31 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579535.html
+2026-09-04 16:30:31 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579535.html HTTP/1.1" 200 None
+2026-09-04 16:30:31 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第024章 路遇肥羊，宰一把！.txt
+2026-09-04 16:30:31 | DEBUG    | core.processmanager | 已保存章节 24/533：第24章 路遇肥羊，宰一把！
+2026-09-04 16:30:31 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579539.html
+2026-09-04 16:30:32 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579539.html HTTP/1.1" 200 None
+2026-09-04 16:30:32 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第025章 我家学长过于优秀.txt
+2026-09-04 16:30:32 | DEBUG    | core.processmanager | 已保存章节 25/533：第25章 我家学长过于优秀
+2026-09-04 16:30:32 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579542.html
+2026-09-04 16:30:32 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579542.html HTTP/1.1" 200 None
+2026-09-04 16:30:32 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第026章 一掷千金小公主.txt
+2026-09-04 16:30:32 | DEBUG    | core.processmanager | 已保存章节 26/533：第26章 一掷千金小公主
+2026-09-04 16:30:32 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579546.html
+2026-09-04 16:30:32 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579546.html HTTP/1.1" 200 None
+2026-09-04 16:30:32 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第027章 另一支木马小队！.txt
+2026-09-04 16:30:32 | DEBUG    | core.processmanager | 已保存章节 27/533：第27章 另一支木马小队！
+2026-09-04 16:30:32 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579551.html
+2026-09-04 16:30:32 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579551.html HTTP/1.1" 200 None
+2026-09-04 16:30:32 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第028章 追加规则，死亡倒计时！.txt
+2026-09-04 16:30:32 | DEBUG    | core.processmanager | 已保存章节 28/533：第28章 追加规则，死亡倒计时！
+2026-09-04 16:30:32 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579558.html
+2026-09-04 16:30:33 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579558.html HTTP/1.1" 200 None
+2026-09-04 16:30:33 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第029章 青山不改，绿水长流.txt
+2026-09-04 16:30:33 | DEBUG    | core.processmanager | 已保存章节 29/533：第29章 青山不改，绿水长流
+2026-09-04 16:30:33 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579562.html
+2026-09-04 16:30:33 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579562.html HTTP/1.1" 200 None
+2026-09-04 16:30:33 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第030章 神主打赏，正道的光.txt
+2026-09-04 16:30:33 | DEBUG    | core.processmanager | 已保存章节 30/533：第30章 神主打赏，正道的光
+2026-09-04 16:30:33 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579565.html
+2026-09-04 16:30:33 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579565.html HTTP/1.1" 200 None
+2026-09-04 16:30:33 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第031章 白衣冷刀苏谈夏.txt
+2026-09-04 16:30:33 | DEBUG    | core.processmanager | 已保存章节 31/533：第31章 白衣冷刀苏谈夏
+2026-09-04 16:30:33 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579570.html
+2026-09-04 16:30:33 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579570.html HTTP/1.1" 200 None
+2026-09-04 16:30:33 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第032章 孙缘的暴力秀.txt
+2026-09-04 16:30:33 | DEBUG    | core.processmanager | 已保存章节 32/533：第32章 孙缘的暴力秀
+2026-09-04 16:30:33 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579573.html
+2026-09-04 16:30:34 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579573.html HTTP/1.1" 200 None
+2026-09-04 16:30:34 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第033章 死或生.txt
+2026-09-04 16:30:34 | DEBUG    | core.processmanager | 已保存章节 33/533：第33章 死或生
+2026-09-04 16:30:34 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579576.html
+2026-09-04 16:30:34 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579576.html HTTP/1.1" 200 None
+2026-09-04 16:30:34 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第034章 孙•叶问•缘.txt
+2026-09-04 16:30:34 | DEBUG    | core.processmanager | 已保存章节 34/533：第34章 孙•叶问•缘
+2026-09-04 16:30:34 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579581.html
+2026-09-04 16:30:34 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579581.html HTTP/1.1" 200 None
+2026-09-04 16:30:34 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第035章 碾压局.txt
+2026-09-04 16:30:34 | DEBUG    | core.processmanager | 已保存章节 35/533：第35章 碾压局
+2026-09-04 16:30:34 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579585.html
+2026-09-04 16:30:34 | DEBUG    | urllib3.connectionpool | https://m.35xss.net:443 "GET /5908/2579585.html HTTP/1.1" 200 None
+2026-09-04 16:30:34 | DEBUG    | core.storage | 文件已写入：output/全球游戏化：神级内测玩家/第036章 及时雨孙缘.txt
+2026-09-04 16:30:34 | DEBUG    | core.processmanager | 已保存章节 36/533：第36章 及时雨孙缘
+2026-09-04 16:30:34 | DEBUG    | sites.parser | 请求正文页：https://m.35xss.net/5908/2579589.html
+2026-09-04 16:30:35 | WARNING  | core.processmanager | 下载被用户中断：已完成 36/533 章

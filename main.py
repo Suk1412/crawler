@@ -13,5 +13,6 @@ if __name__ == "__main__":
     url = "https://bbs.kanxue.com/thread-292523.htm"
     url = "https://cn-sec.com/archives/5361156.html"
     url = 'https://m.shuhaige.net/382360/'
+    url = 'https://m.35xss.net/5908/'
     manager = ProcessManager(url)
     manager.run()

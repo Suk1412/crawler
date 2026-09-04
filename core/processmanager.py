@@ -26,9 +26,7 @@ class ProcessManager(object):
         logger.info("开始下载《%s》，共 %s 章", book_name, total_chapters)
         saved_count = 0
         try:
-            for completed, (chapter_no, (chapter_title, chapter_url)) in enumerate(
-                chapters.items(), start=1
-            ):
+            for completed, (chapter_no, (chapter_title, chapter_url)) in enumerate(chapters.items(), start=1):
                 _, content = self.parser.get_chapter_content(chapter_url)
                 self.storage.save(
                     book_name=book_name,
