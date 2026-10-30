@@ -70,10 +70,13 @@ class Parser():
         """返回书名"""
         logger.debug("请求书籍/文章页：%s", html)
         response = self.session.get(html, timeout=(5, 15))
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.text, 'html.parser')
-            book_name = soup.select(self.book_title_selector)[0].text.strip()
-            logger.debug("书籍/文章名：%s", book_name)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, 'html.parser')
+        title_node = soup.select_one(self.book_title_selector)
+        if title_node is None or not title_node.get_text(strip=True):
+            raise ValueError(f"找不到书籍/列表标题：{self.book_title_selector}，URL：{html}")
+        book_name = title_node.get_text().strip()
+        logger.debug("书籍/文章名：%s", book_name)
         return book_name
 
 

@@ -1,0 +1,36 @@
+domains:
+  - book18.me
+  - www.book18.me
+
+match:
+  # 支持短篇总列表及左侧数字分类入口，例如 /category/18。
+  # 仅提取 /article/ 正文链接；长篇的 /chapters/ 目录需另配 catalog。
+  path_regex: "^/(?:article/index|category/[0-9]+)/?$"
+  priority: 90
+
+entry_type: article_list
+
+book:
+  title_selector: "title"
+
+catalog:
+  title_selector: "title"
+  page_mode: next_link
+  # 最多抓取的列表页数；先用 1 验证，需要更多时再调大。
+  max_pages: 10
+
+  # Parser 初始化要求保留这两个字段；next_link 模式不使用它们。
+  page_selector: "ul.pagination a.page-link"
+  page_url_attr: "href"
+  next_page_selector: "ul.pagination li.next:not(.disabled) a.page-link"
+  next_page_url_attr: "href"
+
+  chapter_selector: "ul.list-group > li.list-group-item > a[href^='/article/']"
+  chapter_title: text
+  chapter_url_attr: href
+
+content:
+  title_selector: "h1.title"
+  paragraph_selector: "#content p"
+  remove_text_patterns:
+    - '(?i)book18\.org'

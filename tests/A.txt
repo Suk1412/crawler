@@ -1,0 +1,34 @@
+  cn-sec-single-article.yaml：
+
+  domains:
+    - cn-sec.com
+
+  match:
+    path_regex: "^/archives/\\d+\\.html$"
+    priority: 100
+
+  entry_type: single_article
+
+  book:
+    title_selector: "h1.entry-title"
+
+  content:
+    title_selector: "h1.entry-title"
+    paragraph_selector: "div.single-content p"
+
+  它匹配：
+
+  https://cn-sec.com/archives/5000944.html
+
+  cn-sec-article-list.yaml：
+
+  domains:
+    path_regex: "^/archives/category/"
+    priority: 90
+
+  entry_type: article_list
+
+  list:
+    article_selector: "文章列表中每个文章链接的 CSS 选择器"
+    article_title_source: text
+    article_url_attr: href

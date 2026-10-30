@@ -1,0 +1,38 @@
+  crawler/
+  ├── cli.py                       # 命令行入口：传入 URL、开始/结束章节
+  ├── core/
+  │   ├── models.py                # Book、Chapter、Page 等数据结构
+  │   ├── crawler.py               # 统一调度：获取章节 → 获取正文 → 保存
+  │   ├── requester.py             # requests、超时、重试、限速、编码
+  │   ├── urls.py                  # urljoin、去重、下一页循环检测
+  │   └── storage.py               # 文件名清洗、保存 txt
+  ├── sites/
+  │   ├── base.py                  # SiteParser 抽象接口
+  │   ├── registry.py              # 域名 → Parser 的映射
+  │   ├── biquge.py                # 笔趣阁站点的特殊规则
+  │   ├── shuhaige.py
+  │   └── example_blog.py
+  ├── site_configs/
+  │   ├── biquge.yaml              # CSS 选择器等纯配置
+  │   ├── shuhaige.yaml
+  │   └── example_blog.yaml
+  ├── tests/
+  │   ├── fixtures/                # 保存真实网页 HTML 样本
+  │   └── test_sites.py
+  └── output/
+
+长篇小说url
+https://m.shuhaige.net/382358/
+
+单片小说url
+https://www.cnblogs.com/HarmonyOSSDK/p/19642889
+
+ 类型                 含义
+  ━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   catalog              一本长篇小说的章节目录
+  ───────────────────  ──────────────────────────────
+   paginated_article    一篇文章，正文有多页
+  ───────────────────  ──────────────────────────────
+   single_article       一篇文章，单页正文
+  ───────────────────  ──────────────────────────────
+   article_list         一个列表页，包含多篇单页文章

@@ -1,18 +1,21 @@
-# from sites.parser import Parser
-# from sites.config_loader import load_config_for_url   
+import argparse
+
 from core.processmanager import ProcessManager
 from core.logging_config import setup_logging
 
-if __name__ == "__main__":
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="根据站点配置抓取指定 URL 的内容")
+    urls = parser.add_mutually_exclusive_group()
+    urls.add_argument("url", nargs="?", help="要抓取的列表、目录或文章 URL")
+    urls.add_argument("--url", dest="option_url", help="要抓取的 URL（与位置参数二选一）")
+    args = parser.parse_args(argv)
+    url = args.option_url or args.url or "https://www.book18.me/category/18"
+
     setup_logging()
-    url = 'https://m.shuhaige.net/382358/'
-    # url = "https://www.cnblogs.com/HarmonyOSSDK/p/21237380"
-    url = "https://cn-sec.com/archives/5361156.html"
-    # url = "https://cn-sec.com/archives/category/安全文章"
-    url = "https://cn-sec.com/archives/category/安全文章/人工智能安全"
-    url = "https://bbs.kanxue.com/thread-292523.htm"
-    url = "https://cn-sec.com/archives/5361156.html"
-    url = 'https://m.shuhaige.net/382360/'
-    url = 'https://m.35xss.net/5908/'
     manager = ProcessManager(url)
     manager.run()
+
+
+if __name__ == "__main__":
+    main()
